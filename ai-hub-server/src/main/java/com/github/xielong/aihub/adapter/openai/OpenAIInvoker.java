@@ -1,8 +1,8 @@
 package com.github.xielong.aihub.adapter.openai;
 
 import com.github.xielong.aihub.adapter.AIModelInvoker;
-import com.github.xielong.aihub.dao.ApiCredential;
-import com.github.xielong.aihub.dao.ApiCredentialMapper;
+import com.github.xielong.aihub.dao.Credential;
+import com.github.xielong.aihub.dao.CredentialMapper;
 import com.github.xielong.aihub.util.AIProvider;
 import com.github.xielong.aihub.util.HttpClientWithRetry;
 import com.google.common.net.HttpHeaders;
@@ -29,7 +29,7 @@ public class OpenAIInvoker implements AIModelInvoker {
     private final Gson gson = new Gson();
 
     @Autowired
-    private ApiCredentialMapper apiCredentialMapper;
+    private CredentialMapper apiCredentialMapper;
 
     @Autowired
     private HttpClientWithRetry httpClientWithRetry;
@@ -43,7 +43,7 @@ public class OpenAIInvoker implements AIModelInvoker {
     }
 
     private HttpRequest createRequest(String model, String input) {
-        ApiCredential apiCredential = apiCredentialMapper
+        Credential apiCredential = apiCredentialMapper
                 .findByProviderAndKey(AIProvider.OPENAI.getId(), SECURITY_CREDENTIAL_KEY_TOKEN);
 
         String requestBody = createRequestBody(model, input);

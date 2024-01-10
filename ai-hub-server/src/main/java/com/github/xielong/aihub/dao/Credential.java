@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class ApiCredential {
+public class Credential {
 
     private Integer id;
 
