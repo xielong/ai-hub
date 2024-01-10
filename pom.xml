@@ -21,9 +21,10 @@
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <java.version>11</java.version>
         <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
+        <spring-tester.version>3.2.0</spring-tester.version>
         <junit-jupiter.version>5.9.2</junit-jupiter.version>
         <h2.version>2.2.220</h2.version>
-        <logback.version>1.4.14</logback.version>
+        <!--        <logback.version>1.4.14</logback.version>-->
     </properties>
 
     <modules>
@@ -43,12 +44,18 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
         </dependency>
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>${logback.version}</version>
-        </dependency>
+        <!--        <dependency>-->
+        <!--            <groupId>ch.qos.logback</groupId>-->
+        <!--            <artifactId>logback-classic</artifactId>-->
+        <!--            <version>${logback.version}</version>-->
+        <!--        </dependency>-->
 
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-tester.version}</version>
+            <scope>test</scope>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>

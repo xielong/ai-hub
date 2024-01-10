@@ -27,6 +27,10 @@ public enum AIProvider {
         throw new IllegalArgumentException("Unknown provider: " + name);
     }
 
+    public int getId() {
+        return id;
+    }
+
     public String getName() {
         return name;
     }
