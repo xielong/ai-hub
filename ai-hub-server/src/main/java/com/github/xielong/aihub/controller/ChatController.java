@@ -24,7 +24,9 @@ public class ChatController {
         log.debug("Received request to invoke model. Provider: {}, ModelName: {}, Input: {}",
                 provider, model, request);
         try {
-            ChatResponse response = chatService.invokeModel(provider, model, request.getInput());
+            String output = chatService.invokeModel(provider, model, request.getInput());
+            ChatResponse response = new ChatResponse();
+            response.setOutput(output);
             log.debug("Model executed successfully. Provider: {}, ModelName: {}, Result: {}",
                     provider, model, response);
             return ResponseEntity.ok(response);
