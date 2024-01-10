@@ -24,7 +24,6 @@
         <spring-tester.version>3.2.0</spring-tester.version>
         <junit-jupiter.version>5.9.2</junit-jupiter.version>
         <h2.version>2.2.220</h2.version>
-        <!--        <logback.version>1.4.14</logback.version>-->
     </properties>
 
     <modules>
@@ -44,11 +43,6 @@
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
         </dependency>
-        <!--        <dependency>-->
-        <!--            <groupId>ch.qos.logback</groupId>-->
-        <!--            <artifactId>logback-classic</artifactId>-->
-        <!--            <version>${logback.version}</version>-->
-        <!--        </dependency>-->
 
         <dependency>
             <groupId>org.springframework.boot</groupId>

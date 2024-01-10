@@ -8,6 +8,9 @@ import java.util.List;
 @Mapper
 public interface ApiCredentialMapper {
 
+    @Select("SELECT * FROM api_credential WHERE provider = #{provider} and key = #{key}")
+    ApiCredential findByProviderAndKey(Integer provider, String key);
+
     @Select("SELECT * FROM api_credential WHERE provider = #{provider}")
     List<ApiCredential> findByProvider(Integer provider);
 

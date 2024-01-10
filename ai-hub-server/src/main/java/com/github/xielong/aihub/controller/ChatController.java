@@ -20,7 +20,7 @@ public class ChatController {
     public ResponseEntity<ChatResponse> invokeModel(
             @PathVariable String provider,
             @PathVariable String model,
-            @RequestBody ChatRequest request) {
+            @RequestBody ChatRequest request) throws Exception {
         log.debug("Received request to invoke model. Provider: {}, ModelName: {}, Input: {}",
                 provider, model, request);
         try {
