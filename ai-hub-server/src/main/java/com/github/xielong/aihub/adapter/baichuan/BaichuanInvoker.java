@@ -1,12 +1,27 @@
 package com.github.xielong.aihub.adapter.baichuan;
 
-import com.github.xielong.aihub.adapter.AIModelInvoker;
+import com.github.xielong.aihub.adapter.openai.OpenAIInvoker;
+import com.github.xielong.aihub.dao.Credential;
+import com.github.xielong.aihub.dao.CredentialMapper;
+import com.github.xielong.aihub.util.AIProvider;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class BaichuanInvoker implements AIModelInvoker {
+public class BaichuanInvoker extends OpenAIInvoker {
+
+    private static final String PROVICER_DOMAIN = "https://api.baichuan-ai.com";
+    @Autowired
+    private CredentialMapper apiCredentialMapper;
+
     @Override
-    public String invoke(String model, String input) throws Exception {
-        return null;
+    protected String getProviderDomain() {
+        return PROVICER_DOMAIN;
+    }
+
+    @Override
+    protected Credential getCredential() {
+        return apiCredentialMapper
+                .findByProviderAndKey(AIProvider.BAICHUAN.getId(), SECURITY_CREDENTIAL_KEY_TOKEN);
     }
 }

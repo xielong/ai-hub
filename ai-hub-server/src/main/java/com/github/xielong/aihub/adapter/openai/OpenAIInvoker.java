@@ -8,6 +8,7 @@ import com.github.xielong.aihub.util.HttpClientWithRetry;
 import com.google.common.net.HttpHeaders;
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 
 import java.io.BufferedReader;
@@ -21,13 +22,12 @@ import java.util.Optional;
 
 
 @Service
+@Primary
 public class OpenAIInvoker implements AIModelInvoker {
 
-    private static final String OPENAI_DOMAIN = "https://api.openai.com";
-    private static final String SECURITY_CREDENTIAL_KEY_TOKEN = "token";
-
+    protected static final String SECURITY_CREDENTIAL_KEY_TOKEN = "token";
+    private static final String PROVICER_DOMAIN = "https://api.openai.com";
     private final Gson gson = new Gson();
-
     @Autowired
     private CredentialMapper apiCredentialMapper;
 
@@ -39,21 +39,28 @@ public class OpenAIInvoker implements AIModelInvoker {
         HttpRequest request = createRequest(model, input);
         HttpResponse<String> response = httpClientWithRetry.execute(request);
         return processAndExtractContent(response.body());
-
     }
 
     private HttpRequest createRequest(String model, String input) {
-        Credential apiCredential = apiCredentialMapper
-                .findByProviderAndKey(AIProvider.OPENAI.getId(), SECURITY_CREDENTIAL_KEY_TOKEN);
+        Credential apiCredential = getCredential();
 
         String requestBody = createRequestBody(model, input);
 
         return HttpRequest.newBuilder()
                 .header(HttpHeaders.AUTHORIZATION, "Bearer " + apiCredential.getValue())
                 .header("Content-Type", "application/json")
-                .uri(URI.create(URI.create(OPENAI_DOMAIN) + "/v1/chat/completions"))
+                .uri(URI.create(URI.create(getProviderDomain()) + "/v1/chat/completions"))
                 .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                 .build();
+    }
+
+    protected String getProviderDomain() {
+        return PROVICER_DOMAIN;
+    }
+
+    protected Credential getCredential() {
+        return apiCredentialMapper
+                .findByProviderAndKey(AIProvider.OPENAI.getId(), SECURITY_CREDENTIAL_KEY_TOKEN);
     }
 
     private String createRequestBody(String model, String input) {

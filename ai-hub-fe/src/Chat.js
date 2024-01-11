@@ -11,6 +11,7 @@ function Chat() {
   const [input, setInput] = useState('');
   const [selectedModels, setSelectedModels] = useState({
     'OpenAI/gpt-3.5-turbo': true,
+    'Baichuan/Baichuan2-Turbo': true,
   });
 
   const colorClasses = ['message-blue', 'message-green', 'message-coral', 'message-yellow'];
