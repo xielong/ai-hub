@@ -25,8 +25,10 @@
         <h2.version>2.2.220</h2.version>
         <guava.version>33.0.0-jre</guava.version>
         <guava-retrying.version>2.0.0</guava-retrying.version>
+        <mysql-client.version>8.0.26</mysql-client.version>
         <mybatis.version>2.3.2</mybatis.version>
         <h2.version>2.2.220</h2.version>
+        <zhipu.version>1.0.6</zhipu.version>
     </properties>
 
     <dependencies>
@@ -55,6 +57,12 @@
             <artifactId>lombok</artifactId>
         </dependency>
         <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>${mysql-client.version}</version>
+        </dependency>
+
+        <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>${mybatis.version}</version>
@@ -68,6 +76,11 @@
             <groupId>com.github.rholder</groupId>
             <artifactId>guava-retrying</artifactId>
             <version>${guava-retrying.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>cn.bigmodel.openapi</groupId>
+            <artifactId>oapi-java-sdk</artifactId>
+            <version>${zhipu.version}</version>
         </dependency>
 
         <dependency>
