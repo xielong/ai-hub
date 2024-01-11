@@ -3,3 +3,6 @@ ai-hub-server/.idea/
 ai-hub-server/ai-hub-server.iml
 ai-hub-server/target/
 ai-hub-fe/.idea/
+ai-hub-fe/build
+ai-hub-fe/build.zip
+ai-hub-fe/node_modules

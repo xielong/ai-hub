@@ -1,0 +1,96 @@
+.chat-container {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 20%;
+  background-color: #282c34;
+  color: #FFFFFF;
+}
+
+.main-content {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+.main-content span {
+  word-wrap: break-word;
+}
+
+.model-selection-area {
+  margin: 10px;
+  text-align: left;
+}
+
+.sidebar-section-title{
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.model-selector {
+  margin: 5px 0;
+}
+
+.model-selector label {
+  font-size: 14px;
+}
+
+.model-selector input[type="checkbox"] {
+  width: fit-content;
+}
+
+.message-area {
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 98%;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.message-area::-webkit-scrollbar-track {
+  background-color: aqua;
+}
+
+.message-area p {
+  text-align: left;
+  margin-left: 40px;
+}
+
+.message-blue {
+  color: #4f8ec9;
+}
+
+.message-green {
+  color: green;
+}
+
+.message-coral {
+  color: coral;
+}
+
+.message-yellow {
+  color: goldenrod;
+}
+
+.input-area {
+  display: flex;
+  gap: 20px;
+  width: 60%;
+  border-radius: 20px;
+  align-items: center;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.input-textarea {
+  flex-grow: 1;
+  margin: 10px;
+  padding: 10px;
+  width: 60%;
+}
