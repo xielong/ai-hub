@@ -123,6 +123,7 @@ function Chat() {
             {Object.keys(selectedModels).map((modelName, index) => (
                 <ModelSelector key={index} modelId={`model${index}`} modelName={modelName} />
             ))}
+            <h3>Settings</h3>
           </div>
         </div>
         <div className="main-content">
