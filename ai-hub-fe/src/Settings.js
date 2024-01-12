@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import './Settings.css';
@@ -10,14 +10,55 @@ import Sidebar from "./Sidebar";
 function Settings() {
 
     const models = [
-        {name: 'OpenAI', credentials: ['token']},
-        {name: 'Baichuan', credentials: ['token']},
-        {name: 'Zhipu', credentials: ['apiSecretKey']},
-        {name: 'Ali', credentials: ['apiKey']},
+        {provider: 'OpenAI', credentials: ['token']},
+        {provider: 'Baichuan', credentials: ['token']},
+        {provider: 'Zhipu', credentials: ['apiSecretKey']},
+        {provider: 'Ali', credentials: ['apiKey']},
+        {provider: 'Baidu', credentials: ['apiKey', 'secretKey']},
     ];
 
     const selectedModels = {/* ... */};
     const handleModelChange = {/* ... */};
+
+    const [credentials, setCredentials] = useState({});
+
+    const handleCredentialChange = (modelName, credential, value) => {
+        setCredentials({
+            ...credentials,
+            [modelName]: {
+                ...credentials[modelName],
+                [credential]: value
+            }
+        });
+    };
+
+    const handleSubmit = (provider, e) => {
+        e.preventDefault();
+
+        const requestBody = Object.entries(credentials).map(([model, creds]) => {
+            return Object.entries(creds).map(([key, value]) => {
+                return {key, value};
+            });
+        }).flat();
+
+        fetch(`/api/v1/credentials/${provider}`, {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify(requestBody)
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Credentials saved successfully', data);
+            })
+            .catch(error => {
+                console.error('Error updating credentials:', error);
+            });
+    };
 
     return (
         <div className="settings-container">
@@ -25,30 +66,39 @@ function Settings() {
             <Box
                 component="form"
                 sx={{
-                    '& .MuiTextField-root': {m: 1, width: '25ch'},
                     marginTop: '40px',
-                    marginLeft: '40px'
+                    marginLeft: '40px',
+                    '& .MuiGrid-item': {
+                        marginBottom: '16px', // 设置每个 Grid 项目的底部边距
+                    }
                 }}
                 noValidate
                 autoComplete="off"
             >
                 {models.map((model, index) => (
-                    <Grid container key={index} alignItems="center" spacing={2}>
-                        <Grid item xs={3}>
-                            <h2 style={{margin: 0, paddingLeft: '16px'}}>{model.name}</h2>
+                    <Grid container key={index} alignItems="center" spacing={6}>
+                        {/* 模型名称 */}
+                        <Grid item xs={12} sm={2}>
+                            <h2 style={{margin: 0, paddingLeft: '16px'}}>{model.provider}</h2>
                         </Grid>
+
+                        {/* 凭证输入框 */}
                         {model.credentials.map((cred, credIndex) => (
-                            <Grid item key={credIndex}>
+                            <Grid item xs={12} sm={model.credentials.length > 1 ? 4 : 8} key={credIndex}>
                                 <TextField
                                     label={cred}
                                     type="password"
-                                    autoComplete="current-password"
                                     size="small"
+                                    fullWidth
+                                    value={credentials[model.provider]?.[cred] || ''}
+                                    onChange={(e) => handleCredentialChange(model.provider, cred, e.target.value)}
                                 />
                             </Grid>
                         ))}
-                        <Grid item>
-                            <Button variant="contained">Submit</Button>
+
+                        {/* 提交按钮 */}
+                        <Grid item xs={12} sm={1}>
+                            <Button variant="contained" onClick={(e) => handleSubmit(model.provider, e)}>Submit</Button>
                         </Grid>
                     </Grid>
                 ))}
