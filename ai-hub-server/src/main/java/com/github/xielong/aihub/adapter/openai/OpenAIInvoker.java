@@ -26,7 +26,7 @@ import java.util.Optional;
 public class OpenAIInvoker implements AIModelInvoker {
 
     protected static final String SECURITY_CREDENTIAL_KEY_TOKEN = "token";
-    private static final String PROVICER_DOMAIN = "https://api.openai.com";
+    private static final String PROVIDER_DOMAIN = "https://api.openai.com";
     private final Gson gson = new Gson();
     @Autowired
     private CredentialMapper apiCredentialMapper;
@@ -55,7 +55,7 @@ public class OpenAIInvoker implements AIModelInvoker {
     }
 
     protected String getProviderDomain() {
-        return PROVICER_DOMAIN;
+        return PROVIDER_DOMAIN;
     }
 
     protected Credential getCredential() {

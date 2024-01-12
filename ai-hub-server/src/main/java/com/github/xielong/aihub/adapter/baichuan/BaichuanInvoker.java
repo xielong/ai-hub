@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 @Service
 public class BaichuanInvoker extends OpenAIInvoker {
 
-    private static final String PROVICER_DOMAIN = "https://api.baichuan-ai.com";
+    private static final String PROVIDER_DOMAIN = "https://api.baichuan-ai.com";
     @Autowired
     private CredentialMapper apiCredentialMapper;
 
     @Override
     protected String getProviderDomain() {
-        return PROVICER_DOMAIN;
+        return PROVIDER_DOMAIN;
     }
 
     @Override
