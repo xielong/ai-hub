@@ -17,3 +17,33 @@ AI Hub 是一个为了接入多种大型语言模型而设计的服务。它旨�
 使用前请在 Settings 页面设置模型的 credentials：
 
 ![settings](assets/settings.png)
+
+## 安装
+
+### 数据库
+```sql
+CREATE DATABASE `ai_hub`;
+
+CREATE TABLE `api_credential` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `provider` INT NOT NULL,
+    `key` VARCHAR(255) NOT NULL,
+    `value` VARCHAR(1024) NOT NULL,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    UNIQUE(`provider`, `key`)
+);
+```
+
+### 前端
+```shell
+cd ai-hub-fe
+npm run build
+```
+
+### 服务端
+需要 JDK 11 以上版本
+```shell
+cd ai-hub-server
+mvn clean package
+java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
+```
