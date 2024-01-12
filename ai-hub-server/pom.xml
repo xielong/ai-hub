@@ -29,6 +29,7 @@
         <mybatis.version>2.3.2</mybatis.version>
         <h2.version>2.2.220</h2.version>
         <zhipu.version>1.0.6</zhipu.version>
+        <qwen.version>2.9.2</qwen.version>
     </properties>
 
     <dependencies>
@@ -77,10 +78,16 @@
             <artifactId>guava-retrying</artifactId>
             <version>${guava-retrying.version}</version>
         </dependency>
+
         <dependency>
             <groupId>cn.bigmodel.openapi</groupId>
             <artifactId>oapi-java-sdk</artifactId>
             <version>${zhipu.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>dashscope-sdk-java</artifactId>
+            <version>${qwen.version}</version>
         </dependency>
 
         <dependency>
