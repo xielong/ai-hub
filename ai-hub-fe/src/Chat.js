@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import { marked } from 'marked';
+import {marked} from 'marked';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
@@ -8,157 +8,158 @@ import DOMPurify from 'dompurify';
 import './Chat.css';
 
 function Chat() {
-  const [input, setInput] = useState('');
-  const [selectedModels, setSelectedModels] = useState({
-    'OpenAI/gpt-3.5-turbo': true,
-    'Baichuan/Baichuan2-Turbo': true,
-    'Zhipu/chatGLM_turbo': true,
-  });
-
-  const colorClasses = ['message-blue', 'message-green', 'message-coral', 'message-yellow'];
-
-  const [modelColors, setModelColors] = useState({});
-
-  useEffect(() => {
-    const initialModelColors = {};
-    let colorIndex = 0;
-    Object.keys(selectedModels).forEach(model => {
-      initialModelColors[model] = colorClasses[colorIndex % colorClasses.length];
-      colorIndex++;
+    const [input, setInput] = useState('');
+    const [selectedModels, setSelectedModels] = useState({
+        'OpenAI/gpt-3.5-turbo': true,
+        'Baichuan/Baichuan2-Turbo': true,
+        'Zhipu/chatGLM_turbo': true,
+        'Ali/qwen-turbo': true,
     });
-    setModelColors(initialModelColors);
-  }, [selectedModels]);
 
-  const [messages, setMessages] = useState([]);
+    const colorClasses = ['message-blue', 'message-green', 'message-coral', 'message-yellow'];
 
-  const messagesEndRef = useRef(null);
+    const [modelColors, setModelColors] = useState({});
 
-  const ModelSelector = ({ modelId, modelName }) => (
-      <div className="model-selector">
-        <Checkbox
-            id={modelId}
-            checked={selectedModels[modelName]}
-            onChange={(e) => handleModelChange(modelName, e.target.checked)}
-        />
-        <label htmlFor={modelId}>{modelName.split('/')[1]} / {modelName.split('/')[0]}</label>
-      </div>
-  );
+    useEffect(() => {
+        const initialModelColors = {};
+        let colorIndex = 0;
+        Object.keys(selectedModels).forEach(model => {
+            initialModelColors[model] = colorClasses[colorIndex % colorClasses.length];
+            colorIndex++;
+        });
+        setModelColors(initialModelColors);
+    }, [selectedModels]);
 
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
+    const [messages, setMessages] = useState([]);
 
-  useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+    const messagesEndRef = useRef(null);
 
-  const handleInputChange = (e) => {
-    setInput(e.target.value);
-    e.target.style.height = 'auto';
-    e.target.style.height = `${e.target.scrollHeight}px`;
-  };
-
-  const handleModelChange = (model, isChecked) => {
-    console.log(`Model: ${model}, isChecked: ${isChecked}`);
-    setSelectedModels(prevModels => ({
-      ...prevModels,
-      [model]: isChecked
-    }));
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    sendMessage();
-
-  };
-
-  const sendMessage = async () => {
-    if (!input.trim()) return;
-
-    const newMessages = [...messages, { text: input, sender: 'USER' }];
-    setMessages(newMessages);
-
-    setInput('');
-
-    const selectedModelEntries = Object.entries(selectedModels);
-    const selectedModelNames = selectedModelEntries
-        .filter(([, isChecked]) => isChecked)
-        .map(([modelName]) => modelName);
-
-    if (selectedModelNames.length === 0) {
-      console.log("No models selected");
-      return;
-    }
-
-    selectedModelNames.forEach(modelName => {
-      const [provider, model] = modelName.split('/');
-      const url = `/api/v1/models/${provider}/${model}:chat`;
-      fetch(url, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ input })
-      })
-          .then(response => {
-            if (!response.ok) {
-              throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-            return response.json();
-          })
-          .then(data => {
-            setMessages(messages => [...messages, { text: data.output, sender: modelName }]);
-          })
-          .catch(error => {
-            console.error('Error sending message to model:', modelName, error);
-          });
-    });
-  };
-
-
-  return (
-      <div className="chat-container">
-        <div className="sidebar">
-          <h1>AI Hub</h1>
-          <div className="model-selection-area">
-            <h3 className="sidebar-section-title">Models</h3>
-            {Object.keys(selectedModels).map((modelName, index) => (
-                <ModelSelector key={index} modelId={`model${index}`} modelName={modelName} />
-            ))}
-            <h3>Settings</h3>
-          </div>
+    const ModelSelector = ({modelId, modelName}) => (
+        <div className="model-selector">
+            <Checkbox
+                id={modelId}
+                checked={selectedModels[modelName]}
+                onChange={(e) => handleModelChange(modelName, e.target.checked)}
+            />
+            <label htmlFor={modelId}>{modelName.split('/')[1]} / {modelName.split('/')[0]}</label>
         </div>
-        <div className="main-content">
-          <div className="message-area">
-            {messages.map((msg, index) => {
-              const messageClass = `ai-message ${modelColors[msg.sender] || ''}`;
+    );
 
-              return (
-                  <p key={index} className={msg.sender === 'USER' ? 'user-message' : messageClass}>
-                    <strong>{msg.sender}</strong> <br/>
-                    <span dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(marked(msg.text)) }} />
-                  </p>
-              );
-            })}
-            <div ref={messagesEndRef} />
-          </div>
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({behavior: "smooth"});
+    };
 
-          <form onSubmit={handleSubmit}>
-            <div className="input-area">
-              <TextField
-                  className={"input-textarea"}
-                  value={input}
-                  multiline
-                  onChange={handleInputChange}
-                  onKeyPress={e => e.key === 'Enter' && !e.shiftKey && handleSubmit(e)}
-                  maxRows={5}
-              />
-              <Button variant="contained" type="submit" style={{ height: '50px' }}>Send</Button> {/* 更改此处 */}
+    useEffect(() => {
+        scrollToBottom();
+    }, [messages]);
+
+    const handleInputChange = (e) => {
+        setInput(e.target.value);
+        e.target.style.height = 'auto';
+        e.target.style.height = `${e.target.scrollHeight}px`;
+    };
+
+    const handleModelChange = (model, isChecked) => {
+        console.log(`Model: ${model}, isChecked: ${isChecked}`);
+        setSelectedModels(prevModels => ({
+            ...prevModels,
+            [model]: isChecked
+        }));
+    };
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        sendMessage();
+
+    };
+
+    const sendMessage = async () => {
+        if (!input.trim()) return;
+
+        const newMessages = [...messages, {text: input, sender: 'USER'}];
+        setMessages(newMessages);
+
+        setInput('');
+
+        const selectedModelEntries = Object.entries(selectedModels);
+        const selectedModelNames = selectedModelEntries
+            .filter(([, isChecked]) => isChecked)
+            .map(([modelName]) => modelName);
+
+        if (selectedModelNames.length === 0) {
+            console.log("No models selected");
+            return;
+        }
+
+        selectedModelNames.forEach(modelName => {
+            const [provider, model] = modelName.split('/');
+            const url = `/api/v1/models/${provider}/${model}:chat`;
+            fetch(url, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({input})
+            })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! Status: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    setMessages(messages => [...messages, {text: data.output, sender: modelName}]);
+                })
+                .catch(error => {
+                    console.error('Error sending message to model:', modelName, error);
+                });
+        });
+    };
+
+
+    return (
+        <div className="chat-container">
+            <div className="sidebar">
+                <h1>AI Hub</h1>
+                <div className="model-selection-area">
+                    <h3 className="sidebar-section-title">Models</h3>
+                    {Object.keys(selectedModels).map((modelName, index) => (
+                        <ModelSelector key={index} modelId={`model${index}`} modelName={modelName}/>
+                    ))}
+                    <h3>Settings</h3>
+                </div>
             </div>
-          </form>
+            <div className="main-content">
+                <div className="message-area">
+                    {messages.map((msg, index) => {
+                        const messageClass = `ai-message ${modelColors[msg.sender] || ''}`;
+
+                        return (
+                            <p key={index} className={msg.sender === 'USER' ? 'user-message' : messageClass}>
+                                <strong>{msg.sender}</strong> <br/>
+                                <span dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(marked(msg.text))}}/>
+                            </p>
+                        );
+                    })}
+                    <div ref={messagesEndRef}/>
+                </div>
+
+                <form onSubmit={handleSubmit}>
+                    <div className="input-area">
+                        <TextField
+                            className={"input-textarea"}
+                            value={input}
+                            multiline
+                            onChange={handleInputChange}
+                            onKeyPress={e => e.key === 'Enter' && !e.shiftKey && handleSubmit(e)}
+                            maxRows={5}
+                        />
+                        <Button variant="contained" type="submit" style={{height: '50px'}}>Send</Button>
+                    </div>
+                </form>
 
 
+            </div>
         </div>
-      </div>
-  );
+    );
 }
 
 export default Chat;
