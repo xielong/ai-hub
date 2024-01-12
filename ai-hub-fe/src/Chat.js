@@ -16,6 +16,7 @@ function Chat() {
         'Ali/qwen-turbo': true,
         'Baichuan/Baichuan2-Turbo': true,
         'Zhipu/chatGLM_turbo': true,
+        'Minimax/abab5.5-chat': true,
     });
 
     const colorClasses = ['message-blue', 'message-green', 'message-coral', 'message-yellow'];

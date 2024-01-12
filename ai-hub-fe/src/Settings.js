@@ -15,6 +15,7 @@ function Settings() {
         {provider: 'Zhipu', credentials: ['apiSecretKey']},
         {provider: 'Ali', credentials: ['apiKey']},
         {provider: 'Baidu', credentials: ['apiKey', 'secretKey']},
+        {provider: 'Minimax', credentials: ['groupId', 'apiKey']},
     ];
 
     const selectedModels = {/* ... */};
