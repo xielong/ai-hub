@@ -6,6 +6,7 @@ import Checkbox from '@mui/material/Checkbox';
 import DOMPurify from 'dompurify';
 
 import './Chat.css';
+import Sidebar from "./Sidebar";
 
 function Chat() {
     const [input, setInput] = useState('');
@@ -41,7 +42,7 @@ function Chat() {
                 checked={selectedModels[modelName]}
                 onChange={(e) => handleModelChange(modelName, e.target.checked)}
             />
-            <label htmlFor={modelId}>{modelName.split('/')[1]} / {modelName.split('/')[0]}</label>
+            <label htmlFor={modelId}>{modelName.split('/')[0]} / {modelName.split('/')[1]}</label>
         </div>
     );
 
@@ -117,16 +118,7 @@ function Chat() {
 
     return (
         <div className="chat-container">
-            <div className="sidebar">
-                <h1>AI Hub</h1>
-                <div className="model-selection-area">
-                    <h3 className="sidebar-section-title">Models</h3>
-                    {Object.keys(selectedModels).map((modelName, index) => (
-                        <ModelSelector key={index} modelId={`model${index}`} modelName={modelName}/>
-                    ))}
-                    <h3>Settings</h3>
-                </div>
-            </div>
+            <Sidebar selectedModels={selectedModels} handleModelChange={handleModelChange}/>
             <div className="main-content">
                 <div className="message-area">
                     {messages.map((msg, index) => {
