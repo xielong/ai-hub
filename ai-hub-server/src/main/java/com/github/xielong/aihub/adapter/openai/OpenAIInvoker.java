@@ -41,7 +41,7 @@ public class OpenAIInvoker implements AIModelInvoker {
         return processAndExtractContent(response.body());
     }
 
-    private HttpRequest createRequest(String model, String input) {
+    protected HttpRequest createRequest(String model, String input) {
         Credential apiCredential = getCredential();
 
         String requestBody = createRequestBody(model, input);
@@ -63,7 +63,7 @@ public class OpenAIInvoker implements AIModelInvoker {
                 .findByProviderAndKey(AIProvider.OPENAI.getId(), SECURITY_CREDENTIAL_KEY_TOKEN);
     }
 
-    private String createRequestBody(String model, String input) {
+    protected String createRequestBody(String model, String input) {
         ChatCompletionRequest.Message systemMessage = ChatCompletionRequest.Message.builder()
                 .role("system")
                 .content("")
@@ -104,10 +104,14 @@ public class OpenAIInvoker implements AIModelInvoker {
         if (!line.startsWith(dataPrefix)) {
             return Optional.empty();
         }
+        String content = extractContentFromLine0(line);
+        return Optional.ofNullable(content);
+    }
+
+    protected String extractContentFromLine0(String line) {
         ChatCompletionResponse chatCompletionResponse =
                 gson.fromJson(line.substring("data: ".length()), ChatCompletionResponse.class);
-        String content = chatCompletionResponse.getChoices().get(0).getDelta().getContent();
-        return Optional.ofNullable(content);
+        return chatCompletionResponse.getChoices().get(0).getDelta().getContent();
     }
 
 

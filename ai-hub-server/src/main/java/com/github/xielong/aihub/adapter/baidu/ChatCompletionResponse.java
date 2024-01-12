@@ -1,4 +1,4 @@
-package com.github.xielong.aihub.adapter.tencent;
+package com.github.xielong.aihub.adapter.baidu;
 
 import com.google.gson.annotations.SerializedName;
 import lombok.Data;
