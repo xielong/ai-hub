@@ -8,8 +8,10 @@ AI Hub 是一个为了接入多种大型语言模型而设计的服务。它旨�
 1. OpenAI / gpt-3.5-turbo
 2. Baidu / ERNIE-Bot-turbo
 3. Ali / qwen-turbo
-4. Baichuan / Baichuan2-Turbo
-5. Zhipu / chatGLM_turbo
+4. Tencent / ChatPro
+5. Baichuan / Baichuan2-Turbo
+6. Zhipu / chatGLM_turbo
+7. Minimax / abab5.5-chat
 
 ![chat-demo](assets/chat-demo.png)
 
@@ -37,7 +39,7 @@ CREATE TABLE `api_credential` (
 ### 前端
 ```shell
 cd ai-hub-fe
-npm run build
+npm run start
 ```
 
 ### 服务端

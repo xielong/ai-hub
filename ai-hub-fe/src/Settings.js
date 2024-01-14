@@ -16,6 +16,7 @@ function Settings() {
         {provider: 'Ali', credentials: ['apiKey']},
         {provider: 'Baidu', credentials: ['apiKey', 'secretKey']},
         {provider: 'Minimax', credentials: ['groupId', 'apiKey']},
+        {provider: 'Tencent', credentials: ['appId', 'secretId', 'secretKey']},
     ];
 
     const selectedModels = {/* ... */};
@@ -85,7 +86,9 @@ function Settings() {
 
                         {/* 凭证输入框 */}
                         {model.credentials.map((cred, credIndex) => (
-                            <Grid item xs={12} sm={model.credentials.length > 1 ? 4 : 8} key={credIndex}>
+                            <Grid item xs={12}
+                                  sm={model.credentials.length === 1 ? 8 : model.credentials.length === 2 ? 4 : 2.7}
+                                  key={credIndex}>
                                 <TextField
                                     label={cred}
                                     type="password"

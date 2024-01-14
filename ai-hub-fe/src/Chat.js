@@ -14,6 +14,7 @@ function Chat() {
         'OpenAI/gpt-3.5-turbo': true,
         'Baidu/ERNIE-Bot-turbo': true,
         'Ali/qwen-turbo': true,
+        'Tencent/ChatPro': true,
         'Baichuan/Baichuan2-Turbo': true,
         'Zhipu/chatGLM_turbo': true,
         'Minimax/abab5.5-chat': true,
