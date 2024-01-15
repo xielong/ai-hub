@@ -17,6 +17,7 @@ function Settings() {
         {provider: 'Baidu', credentials: ['apiKey', 'secretKey']},
         {provider: 'Minimax', credentials: ['groupId', 'apiKey']},
         {provider: 'Tencent', credentials: ['appId', 'secretId', 'secretKey']},
+        {provider: 'Xunfei', credentials: ['appId', 'apiKey', 'apiSecret']},
     ];
 
     const selectedModels = {/* ... */};

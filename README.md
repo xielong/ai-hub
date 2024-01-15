@@ -12,6 +12,7 @@ AI Hub 是一个为了接入多种大型语言模型而设计的服务。它旨�
 5. Baichuan / Baichuan2-Turbo
 6. Zhipu / chatGLM_turbo
 7. Minimax / abab5.5-chat
+8. Xunfei / Spark3.1
 
 ![chat-demo](assets/chat-demo.png)
 
