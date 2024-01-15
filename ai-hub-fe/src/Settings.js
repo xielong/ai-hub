@@ -63,7 +63,7 @@ function Settings() {
     };
 
     return (
-        <div className="settings-container">
+        <div className="main-container">
             <Sidebar selectedModels={selectedModels} handleModelChange={handleModelChange}/>
             <Box
                 component="form"
@@ -71,7 +71,7 @@ function Settings() {
                     marginTop: '40px',
                     marginLeft: '40px',
                     '& .MuiGrid-item': {
-                        marginBottom: '16px', // 设置每个 Grid 项目的底部边距
+                        marginBottom: '16px',
                     }
                 }}
                 noValidate
@@ -84,7 +84,6 @@ function Settings() {
                             <h2 style={{margin: 0, paddingLeft: '16px'}}>{model.provider}</h2>
                         </Grid>
 
-                        {/* 凭证输入框 */}
                         {model.credentials.map((cred, credIndex) => (
                             <Grid item xs={12}
                                   sm={model.credentials.length === 1 ? 8 : model.credentials.length === 2 ? 4 : 2.7}
@@ -100,7 +99,6 @@ function Settings() {
                             </Grid>
                         ))}
 
-                        {/* 提交按钮 */}
                         <Grid item xs={12} sm={1}>
                             <Button variant="contained" onClick={(e) => handleSubmit(model.provider, e)}>Submit</Button>
                         </Grid>

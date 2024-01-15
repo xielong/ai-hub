@@ -31,7 +31,7 @@ public class HistoryController {
         List<QuestionResponse> questionResponses = modelAnswers.stream()
                 .map(modelAnswer -> {
                     QuestionResponse questionResponse = new QuestionResponse();
-                    questionResponse.setQuestionHash(modelAnswer.getQuestionHash());
+                    questionResponse.setHash(modelAnswer.getQuestionHash());
                     questionResponse.setQuestion(modelAnswer.getQuestion());
                     return questionResponse;
                 })
