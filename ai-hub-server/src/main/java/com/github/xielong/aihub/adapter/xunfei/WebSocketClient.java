@@ -55,7 +55,7 @@ public class WebSocketClient extends WebSocketListener {
         ChatCompletionRequest.Parameter parameter = new ChatCompletionRequest.Parameter();
         ChatCompletionRequest.Parameter.Chat chat = new ChatCompletionRequest.Parameter.Chat();
         chat.setDomain("generalv2");
-        chat.setTemperature(0.5);
+        chat.setTemperature(0.8);
         chat.setMaxTokens(4096);
         parameter.setChat(chat);
         request.setParameter(parameter);
