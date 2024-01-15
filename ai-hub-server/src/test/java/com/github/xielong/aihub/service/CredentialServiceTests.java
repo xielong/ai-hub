@@ -11,8 +11,7 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.util.List;
 
-import static org.springframework.test.util.AssertionErrors.assertEquals;
-
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @SpringBootTest
 @ExtendWith(SpringExtension.class)
@@ -26,17 +25,17 @@ public class CredentialServiceTests {
     public void findOpenAICredentials() {
         List<Credential> apiCredentials = apiCredentialService
                 .findCredentialsByProvider(AIProvider.OPENAI.getName());
-        assertEquals("The number of credentials for OPENAI should be 1", 1, apiCredentials.size());
+        assertEquals(1, apiCredentials.size());
         Credential apiCredential = apiCredentials.get(0);
-        assertEquals("The key of the OPENAI credential should be 'token'", "token", apiCredential.getKey());
-        assertEquals("The value of the OPENAI credential should be 'gpt_token_value'", "gpt_token_value", apiCredential.getValue());
+        assertEquals("token", apiCredential.getKey());
+        assertEquals("gpt_token_value", apiCredential.getValue());
     }
 
     @Test
     @Sql({"classpath:db/initial.sql"})
     public void findAllCredentials() {
         List<Credential> apiCredentials = apiCredentialService.findAllCredentials();
-        assertEquals("The total number of credentials should be 7", 7, apiCredentials.size());
+        assertEquals(7, apiCredentials.size());
     }
 
     @Test
@@ -44,11 +43,11 @@ public class CredentialServiceTests {
     public void addOrUpdateCredentials() {
         apiCredentialService.addOrUpdateCredentials(AIProvider.OPENAI.getName(), "key2", "value2");
         List<Credential> apiCredentials = apiCredentialService.findCredentialsByProvider(AIProvider.OPENAI.getName());
-        assertEquals("The number of credentials for OPENAI should be 2", 2, apiCredentials.size());
+        assertEquals(2, apiCredentials.size());
 
         apiCredentialService.addOrUpdateCredentials(AIProvider.ALI.getName(), "key1", "value1");
         List<Credential> apiCredentials2 = apiCredentialService.findCredentialsByProvider(AIProvider.ALI.getName());
-        assertEquals("The number of credentials for OPENAI should be 1", 1, apiCredentials2.size());
+        assertEquals(1, apiCredentials2.size());
 
     }
 
