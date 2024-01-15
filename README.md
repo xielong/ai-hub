@@ -53,5 +53,6 @@ java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
 
 ## 测试集
 
-### 翻译
+### [翻译](docs/use_cases/translation/)
+### [编程](docs/use_cases/coding/)
 ### z-bench 测试集
