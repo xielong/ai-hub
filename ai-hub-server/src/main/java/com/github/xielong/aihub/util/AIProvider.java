@@ -18,6 +18,15 @@ public enum AIProvider {
         this.name = name;
     }
 
+    public static AIProvider fromId(Integer id) {
+        for (AIProvider provider : values()) {
+            if (provider.getId() == id) {
+                return provider;
+            }
+        }
+        throw new IllegalArgumentException("Unknown provider id: " + id);
+    }
+
     public static AIProvider fromName(String name) {
         for (AIProvider provider : values()) {
             if (provider.getName().equalsIgnoreCase(name)) {

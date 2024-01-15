@@ -16,4 +16,8 @@ public class ModelAnswerService {
     public List<ModelAnswer> findAllQuestions() {
         return modelAnswerMapper.findAllQuestions();
     }
+
+    public List<ModelAnswer> findAnswersByQuestionHash(String questionHash) {
+        return modelAnswerMapper.findByQuestionHash(questionHash);
+    }
 }

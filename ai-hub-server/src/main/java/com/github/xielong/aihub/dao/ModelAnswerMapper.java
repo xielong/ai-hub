@@ -13,7 +13,7 @@ public interface ModelAnswerMapper {
             "GROUP BY question")
     List<ModelAnswer> findAllQuestions();
 
-    @Select("SELECT * FROM model_answer WHERE question_hash = #{questionHash} order by update_at")
+    @Select("SELECT * FROM model_answer WHERE question_hash = #{questionHash} order by `provider`")
     List<ModelAnswer> findByQuestionHash(String questionHash);
 
     @Insert("INSERT INTO model_answer (`provider`, question_hash, question, model_name, answer, rating, comment) " +
