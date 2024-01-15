@@ -49,3 +49,8 @@ cd ai-hub-server
 mvn clean package
 java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
 ```
+
+## 测试集
+
+### 翻译
+### z-bench 测试集
