@@ -25,7 +25,7 @@
         <h2.version>2.2.220</h2.version>
         <guava.version>33.0.0-jre</guava.version>
         <guava-retrying.version>2.0.0</guava-retrying.version>
-        <mysql-client.version>8.0.26</mysql-client.version>
+        <mysql-client.version>8.0.28</mysql-client.version>
         <mybatis.version>2.3.2</mybatis.version>
         <h2.version>2.2.220</h2.version>
         <zhipu.version>1.0.6</zhipu.version>
