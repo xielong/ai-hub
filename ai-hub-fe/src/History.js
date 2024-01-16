@@ -1,7 +1,8 @@
 import {Accordion, AccordionDetails, AccordionSummary, List, Typography} from "@mui/material";
 import {useEffect, useState} from "react";
 
-// import './History.css';
+import './History.css';
+import Sidebar from "./Sidebar";
 
 function History() {
     const [questions, setQuestions] = useState([]);
@@ -36,7 +37,8 @@ function History() {
 
     return (
         <div className="main-container">
-            <List>
+            <Sidebar selectedModels={selectedModels} handleModelChange={handleModelChange}/>
+            <List style={{width: '80%'}}>
                 {questions.map((item, index) => (
                     <Accordion key={index} onChange={() => fetchAnswers(item.hash)}>
                         <AccordionSummary>

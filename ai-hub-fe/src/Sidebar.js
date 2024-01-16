@@ -38,6 +38,11 @@ function Sidebar({selectedModels, handleModelChange}) {
                 ) : (
                     <Link to="/settings" className="link-style"><h3>Settings</h3></Link>
                 )}
+                {isCurrentPage('/history') ? (
+                    <h3>History</h3>
+                ) : (
+                    <Link to="/history" className="link-style"><h3>History</h3></Link>
+                )}
             </div>
         </div>
     );
