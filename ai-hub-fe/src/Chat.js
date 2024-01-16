@@ -17,7 +17,7 @@ function Chat() {
         'Tencent/ChatPro': true,
         'Baichuan/Baichuan2-Turbo': true,
         'Zhipu/chatGLM_turbo': true,
-        'Minimax/abab5.5-chat': true,
+        'Minimax/abab6-chat': true,
         'Xunfei/Spark3.1': true,
     });
 
