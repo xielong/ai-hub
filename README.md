@@ -71,3 +71,22 @@ java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
 ### [翻译](docs/use_cases/translation/)
 ### [编程](docs/use_cases/coding/)
 ### z-bench 测试集
+
+
+## 价格
+
+| Company | Model                   | Price                    | Notes                                           |
+|---------|-------------------------|--------------------------|-------------------------------------------------|
+| MiniMax | abab6                   | 0.2元/千tokens        |                                   |
+| MiniMax | abab5.5                 | 0.015元/千tokens      |                                   |
+| Zhipu   | GLM-4                   | 0.1元/千tokens           |                                   |
+| Zhipu   | GLM-3-Turbo             | 0.005元/千tokens         |                                   |
+| Ali     | qwen-turbo              | 0.008元/千tokens     |                                                 |
+| Baichuan| Baichuan2-Turbo         | 0.008元/千tokens         |                                   |
+| OpenAI  | gpt-4-1106-preview      | $0.01/1k tokens(input)&nbsp;&nbsp;$0.03/1k tokens (output)    |                       |
+| OpenAI  | gpt-3.5-turbo-1106      | $0.001/1k tokens (input)&nbsp;&nbsp;$0.0020/1k tokens (output)  |                    |
+| Baidu   | ERNIE-Bot-turbo         | 0.012元/千tokens         |                                                 |
+| Baidu   | ERNIE-Bot 4.0           | 0.12元/千tokens          |                                                 |
+| Tencent | ChatStd     | 0.01元/千tokens     | 赠10万token的免费调用额度，有效期12个月        |
+| Tencent | ChatPro     | 0.10元/千tokens    | 赠10万token的免费调用额度，有效期12个月        |
+| Xunfei  | Spark3.1             | 0.03元/千tokens           | 企业赠500万token的免费调用额度，有效期12个月   |
