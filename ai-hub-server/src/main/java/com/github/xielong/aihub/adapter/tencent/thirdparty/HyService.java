@@ -45,13 +45,16 @@ public class HyService {
     private final String secretId;
 
     private final String secretKey;
-    public String signature;
+
+    private final String model;
+    private String signature;
     private HyRequest requestParam;
 
-    public HyService(long appId, String secretId, String secretKey) {
+    public HyService(long appId, String secretId, String secretKey, String model) {
         this.appId = appId;
         this.secretId = secretId;
         this.secretKey = secretKey;
+        this.model = model;
     }
 
     /**
@@ -129,6 +132,7 @@ public class HyService {
         Map<String, String> headers = new HashMap<>();
         headers.put("Content-Type", "application/json");
         headers.put("Authorization", this.signature);
+        headers.put("X-TC-Action", this.model);
         log.info("Input:\n" + URL + " | " + headers + " | " + this.requestParam);
         try {
             HttpURLConnection connection = (HttpURLConnection) new URL(URL).openConnection();

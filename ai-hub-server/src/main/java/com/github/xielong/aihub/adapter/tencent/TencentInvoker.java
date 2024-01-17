@@ -31,7 +31,7 @@ public class TencentInvoker implements AIModelInvoker {
         int enableStream = 1;
         Message[] messages = {new Message("user", input)};
         HyService hyService = new HyService(Long.parseLong(appIdCredential.getValue()),
-                secretIdCredential.getValue(), secretKeyCredential.getValue())
+                secretIdCredential.getValue(), secretKeyCredential.getValue(), model)
                 .genHyRequest(messages, enableStream).sign();
         return hyService.handle();
 
