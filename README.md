@@ -15,6 +15,7 @@ AI Hub 是一个为了接入多种大型语言模型而设计的服务。它旨�
 8. Xunfei / Spark3.1
 9. Tencent / ChatPro
 10. Minimax / abab6-chat
+11. OpenAI / gpt-4-1106-preview
 
 
 ![chat-demo](assets/chat-demo.png)
