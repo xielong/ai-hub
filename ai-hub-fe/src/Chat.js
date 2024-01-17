@@ -14,11 +14,15 @@ function Chat() {
         'OpenAI/gpt-3.5-turbo': true,
         'Baidu/ERNIE-Bot-turbo': true,
         'Ali/qwen-turbo': true,
-        'Tencent/ChatPro': true,
+        'Tencent/ChatStd': true,
         'Baichuan/Baichuan2-Turbo': true,
         'Zhipu/chatGLM_turbo': true,
-        'Minimax/abab6-chat': true,
+        'Minimax/abab5.5-chat': true,
         'Xunfei/Spark3.1': true,
+
+        'Tencent/ChatPro': false,
+        'Minimax/abab6-chat': false,
+
     });
 
     const colorClasses = ['message-blue', 'message-green', 'message-coral', 'message-yellow'];
