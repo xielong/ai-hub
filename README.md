@@ -6,15 +6,15 @@ AI Hub 是一个为了接入多种大型语言模型而设计的服务。它旨�
 
 已支持模型列表：
 1. OpenAI / gpt-3.5-turbo
-2. Baidu / ERNIE-Bot-turbo
-3. Ali / qwen-turbo
-4. Tencent / ChatStd
-5. Baichuan / Baichuan2-Turbo
-6. Zhipu / chatGLM_turbo
-7. Minimax / abab5.5-chat
-8. Xunfei / Spark3.1
-9. Tencent / ChatPro
-10. Minimax / abab6-chat
+2. Baidu / ERNIE-Bot-turbo（文心一言）
+3. Ali / qwen-turbo（通义千问）
+4. Tencent / ChatStd（腾讯混元）
+5. Baichuan / Baichuan2-Turbo（百川）
+6. Zhipu / chatGLM_turbo（智谱）
+7. Minimax / abab5.5-chat（MiniMax）
+8. Xunfei / Spark3.1（讯飞星火）
+9. Tencent / ChatPro（腾讯混元）
+10. Minimax / abab6-chat（MiniMax）
 11. OpenAI / gpt-4-1106-preview
 
 
