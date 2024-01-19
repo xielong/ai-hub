@@ -24,6 +24,19 @@ CREATE TABLE `model_answer` (
     INDEX(`question_hash`, `model_name`)
 );
 
+drop table if exists `model_evaluation`;
+
+CREATE TABLE `model_evaluation` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+     `provider` INT NOT NULL,
+    `model_name` VARCHAR(255) NOT NULL,
+    `scenario_id` INT NOT NULL,
+    `rating` TINYINT UNSIGNED,
+    `comment` TEXT,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX(`provider`, `model_name`, `scenario_id`)
+);
+
 INSERT INTO `api_credential` (`provider`, `key`, `value`) VALUES
 (1, 'token', 'gpt_token_value'),
 (2, 'secretKey', 'baichuan_secret_key_value'),

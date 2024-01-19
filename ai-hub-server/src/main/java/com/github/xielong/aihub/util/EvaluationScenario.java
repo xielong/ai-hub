@@ -5,21 +5,14 @@ import lombok.Getter;
 
 @AllArgsConstructor
 @Getter
-public enum AIProvider {
-    OPENAI(1, "OpenAI"),
-    BAICHUAN(2, "Baichuan"),
-    BAIDU(3, "Baidu"),
-    ALI(4, "Ali"),
-    ZHIPU(5, "Zhipu"),
-    TENCENT(6, "Tencent"),
-    MINIMAX(7, "MiniMax"),
-    XUNFEI(8, "Xunfei");
+public enum EvaluationScenario {
 
+    TRANSLATION(1, "translation");
     private final int id;
     private final String name;
 
-    public static AIProvider fromId(Integer id) {
-        for (AIProvider provider : values()) {
+    public static EvaluationScenario fromId(Integer id) {
+        for (EvaluationScenario provider : values()) {
             if (provider.getId() == id) {
                 return provider;
             }
@@ -27,8 +20,8 @@ public enum AIProvider {
         throw new IllegalArgumentException("Unknown provider id: " + id);
     }
 
-    public static AIProvider fromName(String name) {
-        for (AIProvider provider : values()) {
+    public static EvaluationScenario fromName(String name) {
+        for (EvaluationScenario provider : values()) {
             if (provider.getName().equalsIgnoreCase(name)) {
                 return provider;
             }
@@ -36,5 +29,3 @@ public enum AIProvider {
         throw new IllegalArgumentException("Unknown provider: " + name);
     }
 }
-
-
