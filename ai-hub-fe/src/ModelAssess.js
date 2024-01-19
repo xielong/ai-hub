@@ -1,9 +1,13 @@
 import React, {useEffect, useRef} from 'react';
 import Chart from 'chart.js/auto';
 import './ModelAssess.css';
+import Sidebar from "./Sidebar";
 
 const ModelAssess = () => {
     const chartRef = useRef(null);
+
+    const selectedModels = {/* ... */};
+    const handleModelChange = {/* ... */};
 
     useEffect(() => {
         const chartInstance = new Chart(chartRef.current, {
@@ -43,7 +47,15 @@ const ModelAssess = () => {
         return () => chartInstance.destroy();
     }, []);
 
-    return <canvas ref={chartRef}/>;
+    return (
+        <div className="main-container">
+            <Sidebar selectedModels={selectedModels} handleModelChange={handleModelChange}/>
+            <div style={{margin: '20px', width: '80%'}}>
+                <canvas ref={chartRef}/>
+                <p>备注：红色模型的均价是蓝色模型的 10 倍，选择模型时需要考虑到价格因素</p>
+            </div>
+        </div>
+    );
 };
 
 export default ModelAssess;
