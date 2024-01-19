@@ -70,7 +70,7 @@ function Settings() {
                 component="form"
                 sx={{
                     marginTop: '40px',
-                    marginLeft: '40px',
+                    marginLeft: '20%',
                     '& .MuiGrid-item': {
                         marginBottom: '16px',
                     }

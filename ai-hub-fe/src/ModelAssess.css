@@ -2,3 +2,10 @@
     display: flex;
     height: 100vh;
 }
+
+.charts-container {
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    margin-left: 20%;
+}

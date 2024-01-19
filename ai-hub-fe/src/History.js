@@ -38,7 +38,7 @@ function History() {
     return (
         <div className="main-container">
             <Sidebar selectedModels={selectedModels} handleModelChange={handleModelChange}/>
-            <List style={{width: '80%'}}>
+            <List style={{width: '80%', marginLeft: '20%'}}>
                 {questions.map((item, index) => (
                     <Accordion key={index} onChange={() => fetchAnswers(item.hash)}>
                         <AccordionSummary>
