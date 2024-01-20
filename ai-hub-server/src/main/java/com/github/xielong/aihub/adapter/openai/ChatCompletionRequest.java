@@ -10,7 +10,9 @@ import java.util.List;
 public class ChatCompletionRequest {
     private String model;
     private boolean stream;
-    private double temperature;
+
+    @Builder.Default
+    private double temperature = 0.8;
     private List<Message> messages;
 
     @Data

@@ -4,60 +4,40 @@ import com.github.xielong.aihub.adapter.AIModelInvoker;
 import com.github.xielong.aihub.dao.Credential;
 import com.github.xielong.aihub.dao.CredentialMapper;
 import com.github.xielong.aihub.util.AIProvider;
-import com.google.gson.Gson;
-import com.zhipu.oapi.ClientV3;
-import com.zhipu.oapi.Constants;
-import com.zhipu.oapi.service.v3.*;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 
 @Service
 @Slf4j
 public class ZhipuInvoker implements AIModelInvoker {
 
+    public static final String MODEL_GLM_4 = "glm-4";
     private static final String SECURITY_CREDENTIAL_KEY_TOKEN = "apiSecretKey";
-
+    private static final String MODEL_CHATGLM_TURBO = "chatGLM_turbo";
     @Autowired
     private CredentialMapper apiCredentialMapper;
 
+    @Autowired
+    private ChatglmTurboInvoker chatglmTurboInvoker;
+
+    @Autowired
+    private Glm4Invoker glm4Invoker;
+
     @Override
     public String invoke(String model, String input) throws Exception {
-
         Credential credential = apiCredentialMapper
                 .findByProviderAndKey(AIProvider.ZHIPU.getId(), SECURITY_CREDENTIAL_KEY_TOKEN);
-
-        ClientV3 client = new ClientV3.Builder(credential.getValue()).build();
-
-        ModelApiRequest modelApiRequest = new ModelApiRequest();
-        modelApiRequest.setModelId(Constants.ModelChatGLMTRUBO);
-        modelApiRequest.setInvokeMethod(Constants.invokeMethodSse);
-
-        StandardEventSourceListener listener = new StandardEventSourceListener();
-        listener.setIncremental(false);
-        modelApiRequest.setSseListener(listener);
-        modelApiRequest.setIncremental(false);
-
-        ModelApiRequest.Prompt prompt = new ModelApiRequest.Prompt(ModelConstants.roleUser, input);
-        List<ModelApiRequest.Prompt> prompts = new ArrayList<>();
-        prompts.add(prompt);
-        modelApiRequest.setPrompt(prompts);
-        modelApiRequest.setRequestId(UUID.randomUUID().toString());
-
-        ModelApiResponse sseModelApiResp = client.invokeModelApi(modelApiRequest);
-        log.info("Call to model API completed. Method: {}, Request ID: {}",
-                modelApiRequest.getInvokeMethod(), modelApiRequest.getRequestId());
-        String content = sseModelApiResp.getData().getChoices().get(0).getContent();
-        log.debug("Model output: {}", sseModelApiResp.getData().getChoices().get(0).getContent());
-        log.info("Usage info: {}", new Gson().toJson(sseModelApiResp.getData().getUsage(), Usage.class));
-        log.info("Task ID: {}", sseModelApiResp.getData().getTaskId());
-
-        return content;
+        if (MODEL_CHATGLM_TURBO.equalsIgnoreCase(model)) {
+            return chatglmTurboInvoker.invokeChatglmTurbo(credential.getValue(), input);
+        }
+        if (MODEL_GLM_4.equalsIgnoreCase(model)) {
+            return glm4Invoker.invokeGlm4(credential.getValue(), input);
+        }
+        throw new IllegalArgumentException("Unsupported model: " + model);
 
     }
+
+
 }
