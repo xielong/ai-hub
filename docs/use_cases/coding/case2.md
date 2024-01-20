@@ -59,6 +59,9 @@ public class Credential {
 ### Zhipu/chatGLM_turbo（4）
 无视了@Data，并且生成了包含所有参数的构造函数，但又少了无参构造函数，而get和set函数又没写全。
 
+### Ali/qwen-plus(4)
+没理解对需求，Java Bean确实生成了，但是生成了某个数据库操作的一堆annotation。
+
 ### Baidu/ERNIE-Bot-turbo(4)
 没理解对需求，Java Bean确实生成了，但是生成了某个数据库操作的一堆annotation。
 
@@ -67,6 +70,7 @@ public class Credential {
 
 ### Ali/qwen-turbo（2）
 没理解对需求，Java Bean确实生成了，但是生成了某个数据库操作的一堆annotation和辅助函数。
+
 
 
 ### Summary

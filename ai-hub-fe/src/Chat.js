@@ -21,6 +21,7 @@ function Chat() {
         'Xunfei/Spark3.1': true,
 
         'Baidu/ERNIE-Bot-4': false,
+        'Ali/qwen-plus': false,
         'Zhipu/glm-4': false,
         'Tencent/ChatPro': false,
         'Minimax/abab6-chat': false,

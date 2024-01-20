@@ -47,6 +47,9 @@
 ### Tencent/ChatPro（8）
 正确完成了需求。
 
+### Ali/qwen-plus（7.5）
+基本正确完成了需求，但是部分属性不符合Java Bean规范。
+
 ### Zhipu/glm-4（7.5）
 基本正确完成了需求，但是部分属性不符合Java Bean规范。
 

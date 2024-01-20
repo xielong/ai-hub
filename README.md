@@ -17,6 +17,8 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 10. Minimax / abab6-chat（MiniMax）
 11. OpenAI / gpt-4-1106-preview
 12. Zhipu / glm-4（智谱GLM-4）
+13. Baidu / ERNIE-Bot-4（文心一言4）
+14. Ali / qwen-plus（通义千问plus）
 
 
 ![chat-demo](assets/chat-demo.png)
@@ -95,7 +97,8 @@ java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
 | MiniMax | abab5.5                 | 0.015元/千tokens      |                                   |
 | Zhipu   | GLM-4                   | 0.1元/千tokens           |                                   |
 | Zhipu   | GLM-3-Turbo             | 0.005元/千tokens         |                                   |
-| Ali     | qwen-turbo              | 0.008元/千tokens     |                                                 |
+| Ali     | qwen-plus              | 0.02元/千tokens     |
+| Ali     | qwen-turbo              | 0.008元/千tokens     |  
 | Baichuan| Baichuan2-Turbo         | 0.008元/千tokens         |                                   |
 | OpenAI  | gpt-4-1106-preview      | $0.01/1k tokens(input)&nbsp;&nbsp;$0.03/1k tokens (output)    |                       |
 | OpenAI  | gpt-3.5-turbo-1106      | $0.001/1k tokens (input)&nbsp;&nbsp;$0.0020/1k tokens (output)  |                    |

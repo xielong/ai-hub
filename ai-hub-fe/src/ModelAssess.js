@@ -14,15 +14,16 @@ const ModelAssess = () => {
         const translationChartInstance = new Chart(translationChartRef.current, {
             type: 'bar',
             data: {
-                labels: ['ChatGPT4', '智谱glm-4', '文心一言ERNIE-Bot 4.0', '混元高级版', 'MiniMax abab6', 'GPT3.5',
-                    '百川智能', '智谱chatGLM_turbo', '混元标准版', 'MiniMax abab5.5', '讯飞星火', '通义千问', '文心一言ERNIE-Bot-turbo'],
+                labels: ['ChatGPT4', '智谱glm-4', '文心一言ERNIE-Bot 4.0', '通义千问plus', '混元高级版', 'MiniMax abab6', 'GPT3.5',
+                    '百川智能', '智谱chatGLM_turbo', '混元标准版', 'MiniMax abab5.5', '讯飞星火', '通义千问turbo', '文心一言ERNIE-Bot-turbo'],
                 datasets: [{
                     label: '翻译能力评估',
-                    data: [8, 7.2, 7.1, 6.6, 6.6, 6.4, 6.4, 6.3, 6.3, 6, 5.9, 5.3, 4.9],
+                    data: [8, 7.2, 7.1, 6.9, 6.6, 6.6, 6.4, 6.4, 6.3, 6.3, 6, 5.9, 5.3, 4.9],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.5)',
                         'rgba(255, 99, 132, 0.5)',
                         'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
                         'rgba(255, 99, 132, 0.5)',
                         'rgba(255, 99, 132, 0.5)',
                         'rgba(54, 162, 235, 0.5)',
@@ -50,17 +51,18 @@ const ModelAssess = () => {
         const codingChartInstance = new Chart(codingChartRef.current, {
             type: 'bar',
             data: {
-                labels: ['ChatGPT4', '文心一言ERNIE-Bot 4.0', '智谱glm-4', '混元高级版', '混元标准版', '百川智能', 'GPT3.5',
-                    'MiniMax abab6', 'MiniMax abab5.5', '文心一言ERNIE-Bot-turbo', '讯飞星火', '智谱chatGLM_turbo', '通义千问'],
+                labels: ['ChatGPT4', '文心一言ERNIE-Bot 4.0', '智谱glm-4', '混元高级版', '混元标准版', '百川智能', '通义千问plus', 'GPT3.5',
+                    'MiniMax abab6', 'MiniMax abab5.5', '文心一言ERNIE-Bot-turbo', '讯飞星火', '智谱chatGLM_turbo', '通义千问turbo'],
                 datasets: [{
                     label: '编程能力评估',
                     data: [8.3, 7.6, 7.3, 6.8, 6.6,
-                        6.1, 5.8, 5.6, 5.5, 5, 3.9, 3.7, 2.7],
+                        6.1, 6, 5.8, 5.6, 5.5, 5, 3.9, 3.7, 2.7],
                     backgroundColor: [
                         'rgba(255, 99, 132, 0.5)',
                         'rgba(255, 99, 132, 0.5)',
                         'rgba(255, 99, 132, 0.5)',
                         'rgba(255, 99, 132, 0.5)',
+                        'rgba(54, 162, 235, 0.5)',
                         'rgba(54, 162, 235, 0.5)',
                         'rgba(54, 162, 235, 0.5)',
                         'rgba(54, 162, 235, 0.5)',
