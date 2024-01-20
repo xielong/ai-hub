@@ -32,7 +32,7 @@ public class Credential {
 ### OpenAI/ChatGPT4（8）
 完整实现了需求，并有相关解释。
 
-### Baidu/ERNIE-Bot-turbo（8）
+### Baidu/ERNIE-Bot-4（8）
 完整实现了需求，并有相关解释。
 
 ### Zhipu/glm-4（8分）
@@ -58,6 +58,9 @@ public class Credential {
 
 ### Zhipu/chatGLM_turbo（4）
 无视了@Data，并且生成了包含所有参数的构造函数，但又少了无参构造函数，而get和set函数又没写全。
+
+### Baidu/ERNIE-Bot-turbo(4)
+没理解对需求，Java Bean确实生成了，但是生成了某个数据库操作的一堆annotation。
 
 ### Xunfei/Spark3.1（3）
 没理解对需求，Java Bean确实生成了，但是生成了某个数据库操作的一堆annotation。

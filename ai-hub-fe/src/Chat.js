@@ -20,8 +20,9 @@ function Chat() {
         'Minimax/abab5.5-chat': true,
         'Xunfei/Spark3.1': true,
 
-        'Tencent/ChatPro': false,
+        'Baidu/ERNIE-Bot-4': false,
         'Zhipu/glm-4': false,
+        'Tencent/ChatPro': false,
         'Minimax/abab6-chat': false,
         'OpenAI/gpt-4-1106-preview': false,
 

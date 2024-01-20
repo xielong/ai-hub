@@ -53,7 +53,7 @@
 ### Tencent/ChatStd（7.5）
 基本正确完成了需求，但是部分属性不符合Java Bean规范。
 
-### Baidu/ERNIE-Bot-turbo（7）
+### Baidu/ERNIE-Bot-4（7）
 正确完成了需求。但没有使用子类。
 
 ### Minimax/abab6-chat（5.5）
@@ -62,13 +62,16 @@
 ### Baichuan/Baichuan2-Turbo（5）
 正确定义了子类，但是ChatCompletionRequest Bean的名称忘了，自己起了个RequestJson的Bean的名称。
 
-### Ali/qwen-turbo（5）
+### Baidu/ERNIE-Bot-turbo(4)
 定义了三个JsonObject属性：header，parameter 和 payload，显然没有完全理解需求.
 
-### Minimax/abab5.5-chat（5）
+### Ali/qwen-turbo（4）
 定义了三个JsonObject属性：header，parameter 和 payload，显然没有完全理解需求.
 
-### Zhipu/chatGLM_turbo（5）
+### Minimax/abab5.5-chat（4）
+定义了三个JsonObject属性：header，parameter 和 payload，显然没有完全理解需求.
+
+### Zhipu/chatGLM_turbo（4）
 定义了三个JsonObject属性：header，parameter 和 payload，显然没有完全理解需求.
 
 ### Xunfei/Spark3.1（2）

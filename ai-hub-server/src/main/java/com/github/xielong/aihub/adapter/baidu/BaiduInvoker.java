@@ -25,6 +25,8 @@ import java.util.List;
 @Slf4j
 public class BaiduInvoker extends OpenAIInvoker {
 
+    private static final String MODEL_ERNIE_BOT_4 = "ERNIE-Bot-4";
+    private static final String MODEL_ERNIE_BOT_TURBO = "ERNIE-Bot-turbo";
     private static final String SECURITY_CREDENTIAL_KEY_API_KEY = "apiKey";
     private static final String SECURITY_CREDENTIAL_KEY_SECRET_KEY = "secretKey";
     private static final String PROVIDER_DOMAIN = "https://aip.baidubce.com/rpc/2.0/ai_custom";
@@ -41,9 +43,16 @@ public class BaiduInvoker extends OpenAIInvoker {
 
         String requestBody = createRequestBody(model, input);
 
+        String path = "";
+        if (MODEL_ERNIE_BOT_4.equalsIgnoreCase(model)) {
+            path = "/v1/wenxinworkshop/chat/completions_pro";
+        } else if (MODEL_ERNIE_BOT_TURBO.equalsIgnoreCase(model)) {
+            path = "/v1/wenxinworkshop/chat/eb-instant";
+        }
+
         return HttpRequest.newBuilder()
                 .header("Content-Type", "application/json")
-                .uri(URI.create(URI.create(PROVIDER_DOMAIN) + "/v1/wenxinworkshop/chat/completions_pro" +
+                .uri(URI.create(URI.create(PROVIDER_DOMAIN) + path +
                         "?access_token=" + accessToken))
                 .POST(HttpRequest.BodyPublishers.ofString(requestBody))
                 .build();

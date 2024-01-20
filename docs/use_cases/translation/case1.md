@@ -1,7 +1,12 @@
 ## Original Text
+
 Not all solutions to a problem are pretty. This may mean little to no tests, poor performance, ugly code, etc. Sometimes we just need a solution to a problem that shows that the problem can be solved. We want to make sure the problem is solvable albeit, with a less than desirable solution.
 
 ## Translations
+
+### OpenAI/ChatGPT4（8分）
+不是每个解决方案都完美无缺。这可能表示测试不足、性能低下或代码繁杂。有时，我们只需找到一个解决方法，来证明问题是有解的。我们要确认问题能够得到解决，即使解决方案不够理想。
+
 ### OpenAI/gpt-3.5-turbo（7分）
 并非所有问题的解决方案都是完美的。这可能意味着缺乏测试、性能不佳、代码不美观等。有时候，我们只需要一个解决问题的方案，以证明问题是可以解决的。尽管解决方案可能不太理想，但我们希望确保问题是可解决的。
 
@@ -24,7 +29,7 @@ Not all solutions to a problem are pretty. This may mean little to no tests, poo
 ### Minimax/abab5.5-chat（6.5分）
 并非所有问题的解决方案都是完美的。这可能意味着没有足够的测试，性能不佳，代码丑陋等。有时，我们只需要一个可以解决问题的方案，即使它并不理想。我们要确保问题可以解决，即使解决方案并不令人满意。
 
-### Baidu/ERNIE-Bot-turbo（6.5分）
+### Baidu/ERNIE-Bot-4（6.5分）
 针对一个问题，并非所有解决方案都是优雅的。这可能意味着存在测试不足、性能不佳、代码丑陋等问题。有时，我们只需要一个能够证明问题可解的解决方案。尽管这个解决方案并不理想，但我们仍想确保问题是可以解决的。
 
 ### Xunfei/Spark3.1（6.5分）
@@ -33,18 +38,17 @@ Not all solutions to a problem are pretty. This may mean little to no tests, poo
 ### Tencent/ChatStd(6分)
 不是所有问题都有一帆风顺的解决方案。有时候，解决方案可能缺乏测试、性能不佳、代码难以阅读等等。然而，我们通常只需要一个解决方案来证明问题是可以解决的。即使解决方案并不理想，我们也需要确保问题是可以解决的。
 
+### Baidu/ERNIE-Bot-turbo(6分)
+解决方案并不总是美观的，有时可能需要不那么理想的解决方案来解决一个问题。这可能意味着没有测试、性能不佳或丑陋的代码等问题。我们想要确保问题可以被解决，尽管解决方案可能并不理想。
+
 ### Ali/qwen-turbo（6分）
 不是所有的解题方法都美观优雅。有时，它们甚至可能导致几乎无测试、表现糟糕、代码难看等问题。然而，我们并不总是需要找到最完美的解决方案。我们只想证明这个难题是可以解决的。虽然我们选择的解法不太完美，但至少说明了这个问题是有可能被解决的。
-
-
-### OpenAI/ChatGPT4（8分）
-不是每个解决方案都完美无缺。这可能表示测试不足、性能低下或代码繁杂。有时，我们只需找到一个解决方法，来证明问题是有解的。我们要确认问题能够得到解决，即使解决方案不够理想。
 
 ### Summary
 1. `Ali/qwen-turbo` 有翻译错误的地方，比如：“甚至可能导致”。同时，“poor performance, ugly code” 翻译成 “表现糟糕、代码难看” 也不合适。
 2. `Zhipu/glm-4`整体翻译不错，但是把little to no tests 当成了 no tests。
 3. `Tencent/ChatPro` 的翻译：“优美的” 不太准确，“我们也希望确保问题是可以解决的” 不太通顺。
-4. `Baidu/ERNIE-Bot-turbo` 自己加了一段内容：“针对一个问题”。
+4. `Baidu/ERNIE-Bot-4` 自己加了一段内容：“针对一个问题”。
 5. `Minimax/abab5.5-chat` 的翻译不太通顺，在 “即使它并不理想” 后面，又加了“即使解决方案并不令人满意”。
 6. `Xunfei/Spark3.1` 的翻译：“都美观” 用词不对。
 7. 其他大模型的翻译水平都差不太多，对比 `OpenAI/ChatGPT4` 都要略差一些，主要的问题是语句的精炼、选词的准确性。

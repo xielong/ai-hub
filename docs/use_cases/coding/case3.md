@@ -45,13 +45,16 @@
 ### OpenAI/ChatGPT4（9）
 明确完整实现了需求，甚至给出了页面优化的其他建议，并解释的很清楚。
 
-### Baidu/ERNIE-Bot-turbo（8）
+### Baidu/ERNIE-Bot-4（8）
 给了三种方式，其中两种都能完整实现需求。
 
-### Xunfei/Spark3.1（7）
+### Baidu/ERNIE-Bot-turbo(7)
+正确实现了需求，但是解释有一部分是错的。
+
+### Xunfei/Spark3.1（6.5）
 比较丑的实现了功能。
 
-### Zhipu/glm-4（6.5分）
+### Zhipu/glm-4（6.5）
 提供了几个方式，只有一个是有效果的。
 
 ### Tencent/ChatPro（6.5）
