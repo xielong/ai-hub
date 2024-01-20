@@ -35,6 +35,9 @@ public class Credential {
 ### Baidu/ERNIE-Bot-turbo（8）
 完整实现了需求，并有相关解释。
 
+### Zhipu/glm-4（8分）
+完整实现了需求，并有相关解释。
+
 ### Baichuan/Baichuan2-Turbo(8)
 完整实现了需求，并有相关解释。
 

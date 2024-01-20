@@ -16,6 +16,7 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 9. Tencent / ChatPro（腾讯混元）
 10. Minimax / abab6-chat（MiniMax）
 11. OpenAI / gpt-4-1106-preview
+12. Zhipu / glm-4（智谱GLM-4）
 
 
 ![chat-demo](assets/chat-demo.png)
