@@ -8,7 +8,16 @@ services:
     volumes:
       - ./init-db:/docker-entrypoint-initdb.d
       - mysql-data:/var/lib/mysql
+  backend:
+    build:
+      context: ../ai-hub-server
+      dockerfile: Dockerfile
+  frontend:
+    build:
+      context: ../ai-hub-fe
+      dockerfile: Dockerfile
     ports:
-      - "3307:3306"
+      - "80:80"
+
 volumes:
   mysql-data:
