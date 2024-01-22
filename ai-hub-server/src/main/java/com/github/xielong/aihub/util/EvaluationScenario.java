@@ -7,7 +7,7 @@ import lombok.Getter;
 @Getter
 public enum EvaluationScenario {
 
-    TRANSLATION(1, "translation");
+    TRANSLATION(101, "translation");
     private final int id;
     private final String name;
 

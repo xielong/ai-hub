@@ -5,7 +5,7 @@ import lombok.Data;
 import java.util.Date;
 
 @Data
-public class ModelEvaluation {
+public class ModelEvaluationResponse {
     private Integer id;
     private Integer provider;
     private String modelName;

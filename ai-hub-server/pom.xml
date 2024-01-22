@@ -30,6 +30,7 @@
         <h2.version>2.2.220</h2.version>
         <zhipu.version>1.0.6</zhipu.version>
         <qwen.version>2.9.2</qwen.version>
+        <modelmapper.version>3.2.0</modelmapper.version>
     </properties>
 
     <dependencies>
@@ -56,6 +57,11 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.modelmapper</groupId>
+            <artifactId>modelmapper</artifactId>
+            <version>${modelmapper.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>

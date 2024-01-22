@@ -116,6 +116,17 @@ CREATE TABLE `model_answer` (
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     INDEX(`question_hash`, `model_name`)
 );
+
+CREATE TABLE `model_evaluation` (
+    `id` INT AUTO_INCREMENT PRIMARY KEY,
+    `provider` INT NOT NULL,
+    `model_name` VARCHAR(255) NOT NULL,
+    `scenario_id` INT NOT NULL,
+    `rating` TINYINT UNSIGNED  NOT NULL,
+    `comment` TEXT,
+    `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX(`provider`, `model_name`, `scenario_id`)
+);
 ```
 
 ### 前端
