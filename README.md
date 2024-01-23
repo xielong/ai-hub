@@ -89,15 +89,17 @@ public class AIModelInvokerFactory {
 [测试用例看这里](docs/use_cases/coding/)
 ![英文翻译](assets/assess_coding.png)
 
-## 安装
+## 运行
 
-### 数据库
-数据库可以通过 docker 启动
-```shel
+### Docker
+推荐使用 docker-compose 启动服务
+```shell
 cd docker
 docker-compose up -d
 ```
-如果希望自己配置，参考[脚本](docker/init-db/init.sql)
+
+### 数据库
+参考[脚本](docker/init-db/init.sql)
 
 ### 前端
 ```shell

@@ -4,6 +4,9 @@ WORKDIR /app
 COPY pom.xml .
 COPY src src
 
+RUN sed -i 's/127\.0\.0\.1/db/g' src/main/resources/application.properties
+
+
 RUN mvn -U clean package
 
 FROM openjdk:11-jdk
