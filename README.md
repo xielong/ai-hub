@@ -25,6 +25,15 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 使用前请在 Settings 页面设置模型的 credentials：
 ![settings](assets/settings.png)
 
+## 评估结果
+### 英文翻译
+[测试用例看这里](docs/use_cases/translation/)
+![英文翻译](assets/assess_translation.png)
+
+### 编程
+[测试用例看这里](docs/use_cases/coding/)
+![英文翻译](assets/assess_coding.png)
+
 ## 大模型接入
 如果你想自己接入列表中的大模型，可以通过以下方式。
 ### Rest 服务
@@ -79,15 +88,6 @@ public class AIModelInvokerFactory {
 }
 
 ```
-
-## 评估结果
-### 英文翻译
-[测试用例看这里](docs/use_cases/translation/)
-![英文翻译](assets/assess_translation.png)
-
-### 编程
-[测试用例看这里](docs/use_cases/coding/)
-![英文翻译](assets/assess_coding.png)
 
 ## 运行
 
