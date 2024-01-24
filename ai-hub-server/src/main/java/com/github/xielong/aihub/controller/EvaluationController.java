@@ -37,7 +37,9 @@ public class EvaluationController {
     }
 
     private ModelEvaluationResponse convertToModelEvaluationResponse(ModelEvaluation modelEvaluation) {
-        return modelMapper.map(modelEvaluation, ModelEvaluationResponse.class);
+        ModelEvaluationResponse modelEvaluationResponse = modelMapper.map(modelEvaluation, ModelEvaluationResponse.class);
+
+        return modelEvaluationResponse;
     }
 
 }

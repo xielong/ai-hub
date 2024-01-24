@@ -9,6 +9,7 @@ public class ModelEvaluationResponse {
     private Integer id;
     private Integer provider;
     private String modelName;
+    private Integer modelVersion;
     private Integer scenarioId;
     private Byte rating;
     private String comment;

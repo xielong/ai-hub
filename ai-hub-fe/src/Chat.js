@@ -2,7 +2,6 @@ import React, {useEffect, useRef, useState} from 'react';
 import {marked} from 'marked';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import Checkbox from '@mui/material/Checkbox';
 import DOMPurify from 'dompurify';
 
 import './Chat.css';
@@ -46,17 +45,6 @@ function Chat() {
     const [messages, setMessages] = useState([]);
 
     const messagesEndRef = useRef(null);
-
-    const ModelSelector = ({modelId, modelName}) => (
-        <div className="model-selector">
-            <Checkbox
-                id={modelId}
-                checked={selectedModels[modelName]}
-                onChange={(e) => handleModelChange(modelName, e.target.checked)}
-            />
-            <label htmlFor={modelId}>{modelName.split('/')[0]} / {modelName.split('/')[1]}</label>
-        </div>
-    );
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({behavior: "smooth"});
