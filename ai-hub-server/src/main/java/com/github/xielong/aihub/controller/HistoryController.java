@@ -26,7 +26,7 @@ public class HistoryController {
 
     @GetMapping("/questions")
     public ResponseEntity<List<QuestionResponse>> findAllQuestions() {
-        List<ModelAnswer> modelAnswers = modelAnswerService.findAllQuestions();
+        List<ModelAnswer> modelAnswers = modelAnswerService.findQuestions(1);
 
         List<QuestionResponse> questionResponses = modelAnswers.stream()
                 .map(modelAnswer -> {

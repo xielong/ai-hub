@@ -10,11 +10,13 @@ import java.util.List;
 @Service
 public class ModelAnswerService {
 
+    private static final int PAGE_SIZE = 20;
     @Autowired
     private ModelAnswerMapper modelAnswerMapper;
 
-    public List<ModelAnswer> findAllQuestions() {
-        return modelAnswerMapper.findAllQuestions();
+    public List<ModelAnswer> findQuestions(int currentPage) {
+        int offset = (currentPage - 1) * PAGE_SIZE;
+        return modelAnswerMapper.findQuestions(offset, PAGE_SIZE);
     }
 
     public List<ModelAnswer> findAnswersByQuestionHash(String questionHash) {
