@@ -3,6 +3,7 @@ package com.github.xielong.aihub.controller;
 import com.github.xielong.aihub.dao.ModelEvaluation;
 import com.github.xielong.aihub.model.ModelEvaluationResponse;
 import com.github.xielong.aihub.service.EvaluationService;
+import com.github.xielong.aihub.util.AIModel;
 import com.github.xielong.aihub.util.EvaluationScenario;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -25,6 +26,18 @@ public class EvaluationController {
     @Autowired
     private EvaluationService evaluationService;
 
+    private static ModelEvaluationResponse convertToResponse(ModelEvaluation evaluation) {
+        ModelEvaluationResponse response = new ModelEvaluationResponse();
+        AIModel modelEnum = AIModel.fromId(evaluation.getModel());
+        response.setModelAlias(modelEnum.getAlias());
+        response.setModelVersion(modelEnum.getVersion());
+
+        response.setRating(evaluation.getRating());
+        response.setComment(evaluation.getComment());
+
+        return response;
+    }
+
     @GetMapping("/{scenario}")
     public ResponseEntity<List<ModelEvaluationResponse>> getEvaluationResults(
             @PathVariable String scenario
@@ -32,14 +45,9 @@ public class EvaluationController {
         int scenarioId = EvaluationScenario.fromName(scenario).getId();
         List<ModelEvaluation> modelEvaluations = evaluationService.getEvaluationResults(scenarioId);
         return ResponseEntity.ok(modelEvaluations.stream()
-                .map(this::convertToModelEvaluationResponse)
+                .map(EvaluationController::convertToResponse)
                 .collect(Collectors.toList()));
     }
 
-    private ModelEvaluationResponse convertToModelEvaluationResponse(ModelEvaluation modelEvaluation) {
-        ModelEvaluationResponse modelEvaluationResponse = modelMapper.map(modelEvaluation, ModelEvaluationResponse.class);
-
-        return modelEvaluationResponse;
-    }
 
 }

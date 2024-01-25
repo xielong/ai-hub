@@ -2,17 +2,11 @@ package com.github.xielong.aihub.model;
 
 import lombok.Data;
 
-import java.util.Date;
-
 @Data
 public class ModelEvaluationResponse {
-    private Integer id;
-    private Integer provider;
-    private String modelName;
+    private String modelAlias;
     private Integer modelVersion;
-    private Integer scenarioId;
-    private Byte rating;
+    private Integer rating;
     private String comment;
-    private Date updatedAt;
 }
 

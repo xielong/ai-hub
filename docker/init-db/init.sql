@@ -23,7 +23,7 @@ CREATE TABLE `model_answer` (
 CREATE TABLE `model_evaluation` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `provider` INT NOT NULL,
-    `model_name` VARCHAR(255) NOT NULL,
+    `model` INT NOT NULL,
     `scenario_id` INT NOT NULL,
     `rating` TINYINT UNSIGNED  NOT NULL,
     `comment` TEXT,

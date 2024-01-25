@@ -6,10 +6,9 @@ import java.util.Date;
 
 @Data
 public class ModelEvaluation {
-
     private Integer id;
     private Integer provider;
-    private String modelName;
+    private Integer model;
     private Integer scenarioId;
     private Integer rating;
     private String comment;

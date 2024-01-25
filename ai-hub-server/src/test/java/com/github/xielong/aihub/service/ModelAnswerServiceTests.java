@@ -22,8 +22,8 @@ public class ModelAnswerServiceTests {
 
     @Test
     @Sql({"classpath:db/initial.sql"})
-    public void findAllQuestions() {
-        List<ModelAnswer> allQuestions = modelAnswerService.findAllQuestions();
+    public void findQuestions() {
+        List<ModelAnswer> allQuestions = modelAnswerService.findQuestions(1);
         assertEquals(5, allQuestions.size());
     }
 }

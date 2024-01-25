@@ -24,6 +24,6 @@ public class EvaluationServiceTests {
     @Sql({"classpath:db/initial.sql"})
     public void getEvaluationResults() {
         List<ModelEvaluation> modelEvaluations = evaluationService.getEvaluationResults(EvaluationScenario.TRANSLATION.getId());
-        assertEquals(2, modelEvaluations.size());
+        assertEquals(3, modelEvaluations.size());
     }
 }
