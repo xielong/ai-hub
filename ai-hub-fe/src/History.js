@@ -1,5 +1,6 @@
 import {Accordion, AccordionDetails, AccordionSummary, List, Typography} from "@mui/material";
 import {useEffect, useState} from "react";
+import ReactMarkdown from 'react-markdown'
 
 import './History.css';
 import Sidebar from "./Sidebar";
@@ -47,7 +48,9 @@ function History() {
                         <AccordionDetails>
                             <Typography>
                                 {answers[item.hash] ? answers[item.hash].map((answer, idx) => (
-                                    <p key={idx}>{answer.providerName}: {answer.answer}</p>
+                                    <ReactMarkdown key={idx}>
+                                        {`${answer.providerName}: ${answer.answer}`}
+                                    </ReactMarkdown>
                                 )) : 'Loading...'}
                             </Typography>
                         </AccordionDetails>
