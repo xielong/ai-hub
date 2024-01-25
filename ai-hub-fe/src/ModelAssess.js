@@ -11,95 +11,56 @@ const ModelAssess = () => {
     const handleModelChange = {/* ... */};
 
     useEffect(() => {
-        const translationChartInstance = new Chart(translationChartRef.current, {
-            type: 'bar',
-            data: {
-                labels: ['ChatGPT4', '智谱glm-4', '文心一言ERNIE-Bot 4.0', '通义千问plus',
-                    '混元高级版', 'MiniMax abab6', 'GPT3.5', '百川智能',
-                    '混元标准版', '智谱chatGLM_turbo', 'MiniMax abab5.5', '讯飞星火',
-                    '通义千问turbo', '文心一言ERNIE-Bot-turbo'],
-                datasets: [{
-                    label: '翻译能力评估',
-                    data: [8, 7.5, 7, 7,
-                        6.6, 6.6, 6.4, 6.4,
-                        6.4, 6.3, 6.1, 5.8,
-                        5.3, 5],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                    ]
-                }],
-            },
+        let translationChartInstance;
+        let codingChartInstance;
 
-            options: {
-                scales: {
-                    y: {
-                        min: 2,
-                        max: 9
-                    }
-                }
-            }
-        });
+        const createChart = (chartRef, apiUrl, chartLabel) => {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(data => {
+                    const labels = data.map(item => item.modelAlias);
+                    const ratings = data.map(item => item.rating / 10);
+                    const backgroundColors = data.map(item =>
+                        item.modelVersion >= 10 ? 'rgba(255, 99, 132, 0.5)' : 'rgba(54, 162, 235, 0.5)'
+                    );
 
-        const codingChartInstance = new Chart(codingChartRef.current, {
-            type: 'bar',
-            data: {
-                labels: ['ChatGPT4', '文心一言ERNIE-Bot 4.0', '混元高级版', '智谱glm-4',
-                    '混元标准版', 'MiniMax abab6', 'GPT3.5', '百川智能',
-                    '通义千问plus', 'MiniMax abab5.5', '文心一言ERNIE-Bot-turbo', '智谱chatGLM_turbo',
-                    '讯飞星火', '通义千问turbo'],
-                datasets: [{
-                    label: '编程能力评估',
-                    data: [8, 7.5, 6.9, 6.7,
-                        6.7, 6.1, 6.1, 5.8,
-                        5.8, 5.4, 5, 4.4,
-                        3.9, 3],
-                    backgroundColor: [
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(255, 99, 132, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                        'rgba(54, 162, 235, 0.5)',
-                    ]
-                }],
-            },
+                    return new Chart(chartRef.current, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: chartLabel,
+                                data: ratings,
+                                backgroundColor: backgroundColors
+                            }],
+                        },
+                        options: {
+                            scales: {
+                                y: {
+                                    min: 2,
+                                    max: 9
+                                }
+                            }
+                        }
+                    });
+                })
+                .catch(error => {
+                    console.error(`Error fetching data from ${apiUrl}: `, error);
+                });
+        };
 
-            options: {
-                scales: {
-                    y: {
-                        min: 2,
-                        max: 9
-                    }
-                }
-            }
-        });
+        // Create translation chart
+        translationChartInstance = createChart(translationChartRef, '/api/v1/evaluation/translation', '翻译能力评估');
+
+        // Create coding chart
+        codingChartInstance = createChart(codingChartRef, '/api/v1/evaluation/coding', '编程能力评估');
 
         return () => {
-            translationChartInstance.destroy();
-            codingChartInstance.destroy();
+            if (translationChartInstance) translationChartInstance.destroy();
+            if (codingChartInstance) codingChartInstance.destroy();
         }
     }, []);
+
 
     return (
         <div className="main-container">
