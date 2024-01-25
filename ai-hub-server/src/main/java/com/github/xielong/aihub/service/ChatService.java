@@ -4,7 +4,7 @@ import com.github.xielong.aihub.adapter.AIModelInvoker;
 import com.github.xielong.aihub.adapter.AIModelInvokerFactory;
 import com.github.xielong.aihub.dao.ModelAnswer;
 import com.github.xielong.aihub.dao.ModelAnswerMapper;
-import com.github.xielong.aihub.util.AIProvider;
+import com.github.xielong.aihub.util.AIModel;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,8 +23,7 @@ public class ChatService {
         String output = aiModelInvoker.invoke(model, input);
 
         ModelAnswer modelAnswer = new ModelAnswer();
-        modelAnswer.setProvider(AIProvider.fromName(provider).getId());
-        modelAnswer.setModelName(model);
+        modelAnswer.setModel(AIModel.fromName(model).getId());
         modelAnswer.setQuestion(input);
         modelAnswer.setQuestionHash(DigestUtils.sha256Hex(input));
         modelAnswer.setAnswer(output);

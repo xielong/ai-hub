@@ -4,7 +4,7 @@ import com.github.xielong.aihub.dao.ModelAnswer;
 import com.github.xielong.aihub.model.AnswerResponse;
 import com.github.xielong.aihub.model.QuestionResponse;
 import com.github.xielong.aihub.service.ModelAnswerService;
-import com.github.xielong.aihub.util.AIProvider;
+import com.github.xielong.aihub.util.AIModel;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -49,8 +49,10 @@ public class HistoryController {
                 .map(modelAnswer -> {
                     AnswerResponse answerResponse = new AnswerResponse();
                     answerResponse.setId(modelAnswer.getId());
-                    answerResponse.setProviderName(AIProvider.fromId(modelAnswer.getProvider()).getName());
-                    answerResponse.setModelName(modelAnswer.getModelName());
+                    
+                    AIModel model = AIModel.fromId(modelAnswer.getModel());
+                    answerResponse.setProviderName(model.getProvider());
+                    answerResponse.setModelName(model.getName());
                     answerResponse.setAnswer(modelAnswer.getAnswer());
                     return answerResponse;
                 })

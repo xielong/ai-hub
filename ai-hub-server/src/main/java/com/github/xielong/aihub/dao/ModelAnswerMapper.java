@@ -19,12 +19,11 @@ public interface ModelAnswerMapper {
             "LIMIT #{limit}  OFFSET #{offset} ")
     List<ModelAnswer> findQuestions(int offset, int limit);
 
-    @Select("SELECT * FROM model_answer WHERE question_hash = #{questionHash} " +
-            "ORDER BY `provider`")
+    @Select("SELECT * FROM model_answer WHERE question_hash = #{questionHash} ")
     List<ModelAnswer> findByQuestionHash(String questionHash);
 
-    @Insert("INSERT INTO model_answer (`provider`, question_hash, question, model_name, answer, rating, comment) " +
-            "VALUES (#{provider}, #{questionHash}, #{question}, #{modelName}, #{answer}, #{rating}, #{comment})")
+    @Insert("INSERT INTO model_answer (question_hash, question, model, answer, rating, comment) " +
+            "VALUES (#{questionHash}, #{question}, #{model}, #{answer}, #{rating}, #{comment})")
     void insert(ModelAnswer modelAnswer);
 
 }

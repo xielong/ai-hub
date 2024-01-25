@@ -11,13 +11,14 @@ CREATE TABLE `model_answer` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `question_hash` CHAR(64) NOT NULL,
     `question` TEXT NOT NULL,
-    `provider` INT NOT NULL,
-    `model_name` VARCHAR(255) NOT NULL,
+    `model` INT NOT NULL,
+    `scenario` INT,
     `answer` TEXT NOT NULL,
     `rating` TINYINT UNSIGNED,
     `comment` TEXT,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    INDEX(`question_hash`, `model_name`)
+    INDEX(`question_hash`, `model`),
+    INDEX(`scenario`)
 );
 
 CREATE TABLE `model_evaluation` (

@@ -1,4 +1,4 @@
-drop table if exists `api_credential`;
+DROP TABLE if exists `api_credential`;
 
 CREATE TABLE `api_credential` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -9,22 +9,23 @@ CREATE TABLE `api_credential` (
     UNIQUE(`provider`, `key`)
 );
 
-drop table if exists `model_answer`;
+DROP TABLE if exists `model_answer`;
 
 CREATE TABLE `model_answer` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
     `question_hash` CHAR(64) NOT NULL,
     `question` TEXT NOT NULL,
-    `provider` INT NOT NULL,
-    `model_name` VARCHAR(255) NOT NULL,
+    `model` INT NOT NULL,
+    `scenario` INT,
     `answer` TEXT NOT NULL,
     `rating` TINYINT UNSIGNED,
     `comment` TEXT,
     `updated_at` TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    INDEX(`question_hash`, `model_name`)
+    INDEX(`question_hash`, `model`),
+    INDEX(`scenario`)
 );
 
-drop table if exists `model_evaluation`;
+DROP TABLE if exists `model_evaluation`;
 
 CREATE TABLE `model_evaluation` (
     `id` INT AUTO_INCREMENT PRIMARY KEY,
@@ -46,27 +47,27 @@ INSERT INTO `api_credential` (`provider`, `key`, `value`) VALUES
 (6, 'secretId', 'hunyuan_secret_id_value'),
 (6, 'secretKey', 'hunyuan_secret_key_value');
 
-INSERT INTO `model_answer` (`question_hash`, `question`, `provider`, `model_name`, `answer`)
+INSERT INTO `model_answer` (`question_hash`, `question`, `model`, `answer`)
 VALUES
-('hash_value_1', 'What is the capital of France?', 1, 'Model_XYZ', 'The capital of France is Paris.');
-INSERT INTO `model_answer` (`question_hash`, `question`, `provider`, `model_name`, `answer`)
+('hash_value_1', 'What is the capital of France?', 1, 'The capital of France is Paris.');
+INSERT INTO `model_answer` (`question_hash`, `question`, `model`, `answer`)
 VALUES
-('hash_value_2', 'What is the boiling point of water?', 2, 'Model_ABC', 'The boiling point of water is 100 degrees Celsius at sea level.');
-INSERT INTO `model_answer` (`question_hash`, `question`, `provider`, `model_name`, `answer`)
+('hash_value_2', 'What is the boiling point of water?', 1, 'The boiling point of water is 100 degrees Celsius at sea level.');
+INSERT INTO `model_answer` (`question_hash`, `question`, `model`, `answer`)
 VALUES
-('hash_value_3', 'Who wrote Romeo and Juliet?', 1, 'Model_XYZ', 'Romeo and Juliet was written by William Shakespeare.');
-INSERT INTO `model_answer` (`question_hash`, `question`, `provider`, `model_name`, `answer`)
+('hash_value_3', 'Who wrote Romeo and Juliet?', 2, 'Romeo and Juliet was written by William Shakespeare.');
+INSERT INTO `model_answer` (`question_hash`, `question`, `model`, `answer`)
 VALUES
-('hash_value_4', 'What is the distance to the Moon?', 1, 'Model_XYZ', 'The average distance to the Moon is about 384,400 km.');
-INSERT INTO `model_answer` (`question_hash`, `question`, `provider`, `model_name`, `answer`)
+('hash_value_4', 'What is the distance to the Moon?', 2, 'The average distance to the Moon is about 384,400 km.');
+INSERT INTO `model_answer` (`question_hash`, `question`, `model`, `answer`)
 VALUES
-('hash_value_4', 'What is the distance to the Moon?', 2, 'Model_ABC', 'The Moon is approximately 384,400 kilometers away from Earth.');
-INSERT INTO `model_answer` (`question_hash`, `question`, `provider`, `model_name`, `answer`)
+('hash_value_4', 'What is the distance to the Moon?', 1, 'The Moon is approximately 384,400 kilometers away from Earth.');
+INSERT INTO `model_answer` (`question_hash`, `question`, `model`, `answer`)
 VALUES
-('hash_value_5', 'Who discovered penicillin?', 1, 'Model_XYZ', 'Penicillin was discovered by Alexander Fleming in 1928.');
-INSERT INTO `model_answer` (`question_hash`, `question`, `provider`, `model_name`, `answer`)
+('hash_value_5', 'Who discovered penicillin?', 2, 'Penicillin was discovered by Alexander Fleming in 1928.');
+INSERT INTO `model_answer` (`question_hash`, `question`, `model`, `answer`)
 VALUES
-('hash_value_5', 'Who discovered penicillin?', 3, 'Model_DEF', 'Alexander Fleming is credited with the discovery of penicillin.');
+('hash_value_5', 'Who discovered penicillin?', 3, 'Alexander Fleming is credited with the discovery of penicillin.');
 
 
 INSERT INTO model_evaluation (provider, model, scenario_id, rating)

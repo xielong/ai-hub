@@ -10,8 +10,8 @@ public class ModelAnswer {
     private Integer id;
     private String questionHash;
     private String question;
-    private Integer provider;
-    private String modelName;
+    private Integer scenario;
+    private Integer model;
     private String answer;
     private Integer rating;
     private String comment;
