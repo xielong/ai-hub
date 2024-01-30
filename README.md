@@ -20,6 +20,8 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 13. Minimax / abab6-chat（MiniMax）
 14. Xunfei / Spark3.1（讯飞星火）
 15. Moonshot / moonshot-v1-8k (月之暗面)
+16. Xunfei / Spark3.5 (讯飞星火3.5)
+
 
 ![chat-demo](assets/chat-demo.png)
 
