@@ -5,4 +5,9 @@
     background-color: #282c34;
     text-indent: 5px;
     color: #FFFFFF;
+    overflow-y: auto;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
 }
