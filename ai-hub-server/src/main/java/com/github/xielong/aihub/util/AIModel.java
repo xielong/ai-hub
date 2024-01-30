@@ -13,7 +13,7 @@ public enum AIModel {
     BAICHUAN_BAICHUAN2_TURBO(5, "Baichuan2-Turbo", "百川智能", AIProvider.BAICHUAN.getName(), 1),
     ZHIPU_CHAT_GLM_TURBO(6, "chatGLM_turbo", "智谱chatGLM_turbo", AIProvider.ZHIPU.getName(), 1),
     MINIMAX_ABAB5_5_CHAT(7, "abab5.5-chat", "MiniMax abab5.5", AIProvider.MINIMAX.getName(), 1),
-    XUNFEI_SPARK3_1(8, "Spark3.1", "讯飞星火", AIProvider.XUNFEI.getName(), 1),
+    XUNFEI_SPARK3_1(8, "Spark3.1", "讯飞星火3", AIProvider.XUNFEI.getName(), 1),
     BAIDU_ERNIE_BOT_4(9, "ERNIE-Bot-4", "文心一言ERNIE-Bot 4.0", AIProvider.BAIDU.getName(), 10),
     ALI_QWEN_PLUS(10, "qwen-plus", "通义千问plus", AIProvider.ALI.getName(), 2),
     ZHIPU_GLM_4(11, "glm-4", "智谱glm-4", AIProvider.ZHIPU.getName(), 10),
@@ -21,7 +21,7 @@ public enum AIModel {
     MINIMAX_ABAB6_CHAT(13, "abab6-chat", "MiniMax abab6", AIProvider.MINIMAX.getName(), 10),
     OPENAI_GPT4_1106_PREVIEW(14, "gpt-4-1106-preview", "ChatGPT4", AIProvider.OPENAI.getName(), 10),
     MOONSHOT_V1_8K(15, "moonshot-v1-8k", "moonshot-v1", AIProvider.MOONSHOT.getName(), 1),
-    XUNFEI_SPARK3_5(15, "Spark3.5", "讯飞星火3.5", AIProvider.XUNFEI.getName(), 1);
+    XUNFEI_SPARK3_5(16, "Spark3.5", "讯飞星火3.5", AIProvider.XUNFEI.getName(), 1);
 
     private final int id;
     private final String name;
