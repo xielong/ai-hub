@@ -18,6 +18,7 @@ function Chat() {
         'Zhipu/chatGLM_turbo': true,
         'Minimax/abab5.5-chat': true,
         'Xunfei/Spark3.1': true,
+        'Xunfei/Spark3.5': true,
         'Ali/qwen-plus': true,
         'Moonshot/moonshot-v1-8k': true,
 

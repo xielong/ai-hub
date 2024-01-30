@@ -2,6 +2,7 @@ package com.github.xielong.aihub.adapter.xunfei;
 
 import com.github.xielong.aihub.adapter.AIModelInvoker;
 import com.github.xielong.aihub.dao.CredentialMapper;
+import com.github.xielong.aihub.util.AIModel;
 import com.github.xielong.aihub.util.AIProvider;
 import okhttp3.HttpUrl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +21,12 @@ public class XunfeiInvoker implements AIModelInvoker {
     private static final String SECURITY_CREDENTIAL_KEY_APP_ID = "appId";
     private static final String SECURITY_CREDENTIAL_KEY_API_KEY = "apiKey";
     private static final String SECURITY_CREDENTIAL_KEY_API_SECRET = "apiSecret";
-    private static final String HOST_URL = "https://spark-api.xf-yun.com/v3.1/chat";
     @Autowired
     private CredentialMapper apiCredentialMapper;
 
     @Override
     public String invoke(String model, String input) throws Exception {
-        String authUrl = generateAuthenticatedUrl();
+        String authUrl = generateAuthenticatedUrl(model);
         String url = authUrl.replace("https://", "wss://");
 
         String appId = apiCredentialMapper
@@ -37,8 +37,16 @@ public class XunfeiInvoker implements AIModelInvoker {
 
     }
 
-    private String generateAuthenticatedUrl() throws Exception {
-        URL url = new URL(HOST_URL);
+    private String getHostUrl(String model) {
+        String version = "v3.1";
+        if (model.equalsIgnoreCase(AIModel.XUNFEI_SPARK3_5.getName())) {
+            version = "v3.5";
+        }
+        return "https://spark-api.xf-yun.com/" + version + "/chat";
+    }
+
+    private String generateAuthenticatedUrl(String model) throws Exception {
+        URL url = new URL(getHostUrl(model));
         SimpleDateFormat format = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z", Locale.US);
         format.setTimeZone(TimeZone.getTimeZone("GMT"));
         String formattedDate = format.format(new Date());
@@ -80,6 +88,5 @@ public class XunfeiInvoker implements AIModelInvoker {
                 .build();
         return httpUrl.toString();
     }
-
 
 }
