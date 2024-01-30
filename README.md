@@ -19,6 +19,7 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 12. Minimax / abab5.5-chat（MiniMax）
 13. Minimax / abab6-chat（MiniMax）
 14. Xunfei / Spark3.1（讯飞星火）
+15. Moonshot / moonshot-v1-8k (月之暗面)
 
 ![chat-demo](assets/chat-demo.png)
 
@@ -33,8 +34,6 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 ### 编程
 [测试用例看这里](docs/use_cases/coding/)
 ![英文翻译](assets/assess_coding.png)
-
-这里不需要大量测试用例。只需难度各异的随机测试，就能明显察觉各大模型在体验上的差异。如果某模型在部分测试数据中表现优异，相较于表现欠佳的模型，其优势一目了然。
 
 ## 大模型接入
 如果你想自己接入列表中的大模型，可以通过以下方式。
@@ -141,3 +140,4 @@ java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
 | Tencent | ChatStd     | 0.01元/千tokens     | 赠10万token的免费调用额度，有效期12个月        |
 | Tencent | ChatPro     | 0.10元/千tokens    | 赠10万token的免费调用额度，有效期12个月        |
 | Xunfei  | Spark3.1             | 0.03元/千tokens           | 企业赠500万token的免费调用额度，有效期12个月   |
+| Moonshot  | moonshot-v1-8k             | 0.012元/千tokens           | 新账户赠送15元   |

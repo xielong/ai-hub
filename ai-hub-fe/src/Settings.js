@@ -18,6 +18,7 @@ function Settings() {
         {provider: 'Minimax', credentials: ['groupId', 'apiKey']},
         {provider: 'Tencent', credentials: ['appId', 'secretId', 'secretKey']},
         {provider: 'Xunfei', credentials: ['appId', 'apiKey', 'apiSecret']},
+        {provider: 'Moonshot', credentials: ['apiKey']},
     ];
 
     const selectedModels = {/* ... */};
