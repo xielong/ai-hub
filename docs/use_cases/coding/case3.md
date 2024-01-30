@@ -51,6 +51,12 @@
 ### Baidu/ERNIE-Bot-turbo(7)
 正确实现了需求，但是解释有一部分是错的。
 
+### Moonshot/moonshot-v1-8k(7)
+正确实现了需求，但不是最优方案
+
+### Xunfei/Spark3.5(7)
+正确实现了需求，但不是最优方案
+
 ### Ali/qwen-plus（6.5）
 比较丑的实现了功能。
 

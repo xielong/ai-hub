@@ -26,8 +26,14 @@
 ### Baidu/ERNIE-Bot-4（7）
 完整实现需求，但是有几个地方是最佳实践。
 
+### Xunfei/Spark3.5（7）
+完整实现需求，但是有几个地方是最佳实践。
+
 ### Zhipu/chatGLM_turbo（6.5）
 基本上实现了需求，但是多了些奇怪的命令。
+
+### Moonshot/moonshot-v1-8k(5)
+实现不完整。
 
 ### Baidu/ERNIE-Bot-turbo(5)
 实现不完整。

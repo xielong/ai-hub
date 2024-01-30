@@ -47,6 +47,9 @@
 ### Tencent/ChatPro（8）
 正确完成了需求。
 
+### Moonshot/moonshot-v1-8k（8）
+正确完成了需求。
+
 ### Ali/qwen-plus（7.5）
 基本正确完成了需求，但是部分属性不符合Java Bean规范。
 
@@ -57,6 +60,9 @@
 基本正确完成了需求，但是部分属性不符合Java Bean规范。
 
 ### Baidu/ERNIE-Bot-4（7）
+正确完成了需求。但没有使用子类。
+
+### Xunfei/Spark3.5（7）
 正确完成了需求。但没有使用子类。
 
 ### Minimax/abab6-chat（5.5）

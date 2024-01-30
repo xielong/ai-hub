@@ -42,7 +42,12 @@ public class Credential {
 完整实现了需求，并有相关解释。
 
 ### Minimax/abab6-chat（8）
+
+### Moonshot/moonshot-v1-8k（8）
 完整实现了需求，并有相关解释。
+
+### Xunfei/Spark3.5(7)
+完整实现了需求。
 
 ### Minimax/abab5.5-chat(7)
 完整实现了需求。
@@ -70,8 +75,6 @@ public class Credential {
 
 ### Ali/qwen-turbo（2）
 没理解对需求，Java Bean确实生成了，但是生成了某个数据库操作的一堆annotation和辅助函数。
-
-
 
 ### Summary
 1. 注意：大型语言模型的响应基于概率性预测，因此并不保证每次都一致。只有通过广泛的测试用例和多次测试，才能更准确地评估模型的性能。
