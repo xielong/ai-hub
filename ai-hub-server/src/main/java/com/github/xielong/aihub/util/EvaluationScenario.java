@@ -8,7 +8,8 @@ import lombok.Getter;
 public enum EvaluationScenario {
 
     TRANSLATION(101, "translation"),
-    Coding(102, "coding");
+    Coding(102, "coding"),
+    Instruction(103, "instruction");
     private final int id;
     private final String name;
 
