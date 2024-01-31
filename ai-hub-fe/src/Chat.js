@@ -1,11 +1,10 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {marked} from 'marked';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
-import DOMPurify from 'dompurify';
 
 import './Chat.css';
 import Sidebar from "./Sidebar";
+import ReactMarkdown from "react-markdown";
 
 function Chat() {
     const [input, setInput] = useState('');
@@ -129,7 +128,7 @@ function Chat() {
                         return (
                             <p key={index} className={msg.sender === 'USER' ? 'user-message' : messageClass}>
                                 <strong>{msg.sender}</strong> <br/>
-                                <span dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(marked(msg.text))}}/>
+                                <ReactMarkdown>{msg.text}</ReactMarkdown>
                             </p>
                         );
                     })}

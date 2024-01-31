@@ -11,7 +11,7 @@ function Sidebar({selectedModels, handleModelChange}) {
     };
 
     const ModelSelector = ({modelId, modelName}) => (
-        <div className="model-selector">
+        <div>
             <Checkbox
                 id={modelId}
                 checked={selectedModels[modelName]}

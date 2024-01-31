@@ -32,18 +32,6 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.4);
 }
 
-.model-selector {
-    margin: 5px 0;
-}
-
-.model-selector label {
-    font-size: 14px;
-}
-
-.model-selector input[type="checkbox"] {
-    width: fit-content;
-}
-
 .message-area {
     margin-right: auto;
     margin-top: 20px;
