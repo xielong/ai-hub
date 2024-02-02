@@ -13,4 +13,4 @@
 打开某个app，输出 {"open_app": "${x}"}。${x}需要替换成这些app名称：weixin,feishu,qq,qiyeweixin,xiaohongshu。
 如果用户的命令超出支持范围或无法理解，输出 {"order": "error"}。
 
-请根据用户的实际输入，按照规则输出，输出格式为JSON，不包含其他任何内容：
+请根据用户的实际输入，按照规则输出，输出格式为JSON，不要解释，不包含其他任何内容：

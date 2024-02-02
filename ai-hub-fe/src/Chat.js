@@ -20,6 +20,7 @@ function Chat() {
         'Xunfei/Spark3.5': true,
         'Ali/qwen-plus': true,
         'Moonshot/moonshot-v1-8k': true,
+        'ByteDance/Skylark-chat': true,
 
         'Baidu/ERNIE-Bot-4': false,
         'Zhipu/glm-4': false,

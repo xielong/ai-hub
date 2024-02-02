@@ -84,6 +84,9 @@
 ### OpenAI/gpt-3.5-turbo（4）
 有思路，没有解决问题。
 
+### ByteDance/Skylark-chat（3）
+提供了几个思路，没给代码，明确让它给代码后，给的也是错的。
+
 ### Zhipu/chatGLM_turbo（3）
 给了一个很复杂JavaScript和CSS配合的方式。
 

@@ -32,10 +32,13 @@
 ### Zhipu/chatGLM_turbo（6.5）
 基本上实现了需求，但是多了些奇怪的命令。
 
-### Moonshot/moonshot-v1-8k(5)
+### ByteDance/Skylark-chat (5)
 实现不完整。
 
-### Baidu/ERNIE-Bot-turbo(5)
+### Moonshot/moonshot-v1-8k (5)
+实现不完整。
+
+### Baidu/ERNIE-Bot-turbo (5)
 实现不完整。
 
 ### Ali/qwen-plus（5）
@@ -44,10 +47,10 @@
 ### Zhipu/glm-4（5）
 实现不完整。
 
-### Baichuan/Baichuan2-Turbo(5)
+### Baichuan/Baichuan2-Turbo (5)
 实现不完整。
 
-### Minimax/abab5.5-chat(5)
+### Minimax/abab5.5-chat (5)
 实现不完整。
 
 ### Ali/qwen-turbo（4）

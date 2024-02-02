@@ -31,6 +31,8 @@
         <zhipu.version>1.0.6</zhipu.version>
         <qwen.version>2.9.2</qwen.version>
         <modelmapper.version>3.2.0</modelmapper.version>
+        <volc.version>1.0.144</volc.version>
+        <protobuf.version>3.25.2</protobuf.version>
     </properties>
 
     <dependencies>
@@ -68,7 +70,6 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>${mysql-client.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
@@ -84,6 +85,11 @@
             <artifactId>guava-retrying</artifactId>
             <version>${guava-retrying.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>cn.bigmodel.openapi</groupId>
@@ -94,6 +100,11 @@
             <groupId>com.alibaba</groupId>
             <artifactId>dashscope-sdk-java</artifactId>
             <version>${qwen.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.volcengine</groupId>
+            <artifactId>volc-sdk-java</artifactId>
+            <version>${volc.version}</version>
         </dependency>
 
         <dependency>

@@ -3,6 +3,7 @@ package com.github.xielong.aihub.adapter;
 import com.github.xielong.aihub.adapter.ali.AliInvoker;
 import com.github.xielong.aihub.adapter.baichuan.BaichuanInvoker;
 import com.github.xielong.aihub.adapter.baidu.BaiduInvoker;
+import com.github.xielong.aihub.adapter.bytedance.ByteDanceInvoker;
 import com.github.xielong.aihub.adapter.minimax.MiniMaxInvoker;
 import com.github.xielong.aihub.adapter.moonshot.MoonshotInvoker;
 import com.github.xielong.aihub.adapter.openai.OpenAIInvoker;
@@ -46,6 +47,8 @@ public class AIModelInvokerFactory {
                 return context.getBean(MiniMaxInvoker.class);
             case MOONSHOT:
                 return context.getBean(MoonshotInvoker.class);
+            case BYTEDANCE:
+                return context.getBean(ByteDanceInvoker.class);
             default:
                 throw new IllegalArgumentException("Unknown provider: " + provider);
         }

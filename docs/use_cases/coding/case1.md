@@ -83,6 +83,9 @@
 ### Zhipu/chatGLM_turbo（4）
 定义了三个JsonObject属性：header，parameter 和 payload，显然没有完全理解需求.
 
+### ByteDance/Skylark-chat（2）
+完全没理解需求，给的代码思路错了。
+
 ### Xunfei/Spark3.1（2）
 结构都定义错了。
 

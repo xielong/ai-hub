@@ -19,9 +19,11 @@
 
 ### OpenAI/ChatGPT4 (9.5)
 
-### Minimax/abab6-chat (9)
+### ByteDance/Skylark-chat (9.2)
 
 ### Tencent/ChatPro (9.2)
+
+### Minimax/abab6-chat (9)
 
 ### Ali/qwen-turbo (8.6)
 

@@ -19,6 +19,7 @@ function Settings() {
         {provider: 'Tencent', credentials: ['appId', 'secretId', 'secretKey']},
         {provider: 'Xunfei', credentials: ['appId', 'apiKey', 'apiSecret']},
         {provider: 'Moonshot', credentials: ['apiKey']},
+        {provider: 'ByteDance', credentials: ['accessKey', 'secretKey']},
     ];
 
     const selectedModels = {/* ... */};

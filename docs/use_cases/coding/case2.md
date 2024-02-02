@@ -42,11 +42,15 @@ public class Credential {
 完整实现了需求，并有相关解释。
 
 ### Minimax/abab6-chat（8）
+完整实现了需求，并有相关解释。
 
 ### Moonshot/moonshot-v1-8k（8）
 完整实现了需求，并有相关解释。
 
-### Xunfei/Spark3.5(7)
+### ByteDance/Skylark-chat（8）
+完整实现了需求，并有相关解释。
+
+### Xunfei/Spark3.5 (7)
 完整实现了需求。
 
 ### Minimax/abab5.5-chat(7)
