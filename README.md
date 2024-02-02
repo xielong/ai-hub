@@ -142,7 +142,7 @@ java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
 | Ali     | qwen-turbo              | 0.008元/千tokens     |  
 | Baichuan| Baichuan2-Turbo         | 0.008元/千tokens         |                                   |
 | OpenAI  | gpt-4-1106-preview      | $0.01/1k tokens(input)&nbsp;&nbsp;$0.03/1k tokens (output)    |                       |
-| OpenAI  | gpt-3.5-turbo-1106      | $0.001/1k tokens (input)&nbsp;&nbsp;$0.0020/1k tokens (output)  |                    |
+| OpenAI  | gpt-3.5-turbo-0125      | $0.0005/1k tokens (input)&nbsp;&nbsp;$0.0015/1k tokens (output)  |                    |
 | Baidu   | ERNIE-Bot-turbo         | 0.012元/千tokens         |                                                 |
 | Baidu   | ERNIE-Bot 4.0           | 0.12元/千tokens          |                                                 |
 | Tencent | ChatStd     | 0.01元/千tokens     | 赠10万token的免费调用额度，有效期12个月        |

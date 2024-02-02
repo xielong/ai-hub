@@ -6,7 +6,7 @@ import lombok.Getter;
 @AllArgsConstructor
 @Getter
 public enum AIModel {
-    OPENAI_GPT3_5_TURBO(1, "gpt-3.5-turbo", "GPT3.5", AIProvider.OPENAI.getName(), 1),
+    OPENAI_GPT3_5_TURBO(1, "gpt-3.5-turbo-0125", "GPT3.5", AIProvider.OPENAI.getName(), 1),
     BAIDU_ERNIE_BOT_TURBO(2, "ERNIE-Bot-turbo", "文心一言ERNIE-Bot-turbo", AIProvider.BAIDU.getName(), 1),
     ALI_QWEN_TURBO(3, "qwen-turbo", "通义千问turbo", AIProvider.ALI.getName(), 1),
     TENCENT_CHAT_STD(4, "ChatStd", "混元标准版", AIProvider.TENCENT.getName(), 1),

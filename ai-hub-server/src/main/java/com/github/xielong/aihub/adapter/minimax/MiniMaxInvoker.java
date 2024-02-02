@@ -63,7 +63,7 @@ public class MiniMaxInvoker implements AIModelInvoker {
                 "MM智能助理", "MM智能助理是一款由MiniMax自研的，没有调用其他产品的接口的大型语言模型。MiniMax是一家中国科技公司，一直致力于进行大模型相关的研究。"
         )));
         chatCompletionRequest.setModel(model);
-        chatCompletionRequest.setTokens_to_generate(1034);
+        chatCompletionRequest.setTokens_to_generate(2068);
         chatCompletionRequest.setTemperature(0.01);
         chatCompletionRequest.setTop_p(0.95);
         chatCompletionRequest.setReply_constraints(new ChatCompletionRequest.ReplyConstraints(

@@ -9,7 +9,7 @@ import ReactMarkdown from "react-markdown";
 function Chat() {
     const [input, setInput] = useState('');
     const [selectedModels, setSelectedModels] = useState({
-        'OpenAI/gpt-3.5-turbo': true,
+        'OpenAI/gpt-3.5-turbo-0125': true,
         'Baidu/ERNIE-Bot-turbo': true,
         'Ali/qwen-turbo': true,
         'Tencent/ChatStd': true,
