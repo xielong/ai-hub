@@ -19,7 +19,7 @@ public enum AIModel {
     ZHIPU_GLM_4(11, "glm-4", "智谱glm-4", AIProvider.ZHIPU.getName(), 10),
     TENCENT_CHAT_PRO(12, "ChatPro", "混元高级版", AIProvider.TENCENT.getName(), 10),
     MINIMAX_ABAB6_CHAT(13, "abab6-chat", "MiniMax abab6", AIProvider.MINIMAX.getName(), 10),
-    OPENAI_GPT4_1106_PREVIEW(14, "gpt-4-1106-preview", "ChatGPT4", AIProvider.OPENAI.getName(), 10),
+    OPENAI_GPT4_1106_PREVIEW(14, "gpt-4-0125-preview", "ChatGPT4", AIProvider.OPENAI.getName(), 10),
     MOONSHOT_V1_8K(15, "moonshot-v1-8k", "moonshot-v1", AIProvider.MOONSHOT.getName(), 1),
     XUNFEI_SPARK3_5(16, "Spark3.5", "讯飞星火3.5", AIProvider.XUNFEI.getName(), 1),
     BYTEDANCE_SKYLARK_CHAT(17, "Skylark-chat", "字节豆包", AIProvider.BYTEDANCE.getName(), 1);

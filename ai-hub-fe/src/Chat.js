@@ -26,7 +26,7 @@ function Chat() {
         'Zhipu/glm-4': false,
         'Tencent/ChatPro': false,
         'Minimax/abab6-chat': false,
-        'OpenAI/gpt-4-1106-preview': false,
+        'OpenAI/gpt-4-0125-preview': false,
 
     });
 
