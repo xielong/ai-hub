@@ -5,7 +5,7 @@
 AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管理各种有效的模型调用提示（prompt）。目前，AI Hub已接入国内所有主流的大型语言模型，包括文心一言、腾讯混元、智谱AI、MiniMax、百川智能等，并计划持续追踪、接入和评估新模型。
 
 已支持模型列表：
-1. OpenAI / gpt-4-1106-preview
+1. OpenAI / gpt-4-turbo
 2. OpenAI / gpt-3.5-turbo
 3. Baidu / ERNIE-Bot-4（文心一言4）
 4. Baidu / ERNIE-Bot-turbo（文心一言）
@@ -141,7 +141,7 @@ java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
 | Ali     | qwen-plus              | 0.02元/千tokens     |
 | Ali     | qwen-turbo              | 0.008元/千tokens     |  
 | Baichuan| Baichuan2-Turbo         | 0.008元/千tokens         |                                   |
-| OpenAI  | gpt-4-1106-preview      | $0.01/1k tokens(input)&nbsp;&nbsp;$0.03/1k tokens (output)    |                       |
+| OpenAI  | gpt-4-0125-preview      | $0.01/1k tokens(input)&nbsp;&nbsp;$0.03/1k tokens (output)    |                       |
 | OpenAI  | gpt-3.5-turbo-0125      | $0.0005/1k tokens (input)&nbsp;&nbsp;$0.0015/1k tokens (output)  |                    |
 | Baidu   | ERNIE-Bot-turbo         | 0.012元/千tokens         |                                                 |
 | Baidu   | ERNIE-Bot 4.0           | 0.12元/千tokens          |                                                 |
