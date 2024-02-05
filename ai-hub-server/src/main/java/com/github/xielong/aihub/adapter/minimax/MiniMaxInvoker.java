@@ -18,7 +18,7 @@ import java.util.concurrent.TimeUnit;
 public class MiniMaxInvoker implements AIModelInvoker {
     private static final String SECURITY_CREDENTIAL_KEY_GROUP_ID = "groupId";
     private static final String SECURITY_CREDENTIAL_KEY_API_KEY = "apiKey";
-    private final Gson gson = new Gson();
+    private static final Gson GSON = new Gson();
     private OkHttpClient client = new OkHttpClient();
     @Autowired
     private CredentialMapper apiCredentialMapper;
@@ -38,7 +38,7 @@ public class MiniMaxInvoker implements AIModelInvoker {
         String url = "https://api.minimax.chat/v1/text/chatcompletion_pro?GroupId=" + groupId;
         RequestBody body = RequestBody.create(
                 MediaType.get("application/json; charset=utf-8"),
-                gson.toJson(request)
+                GSON.toJson(request)
         );
 
         Request httpRequest = new Request.Builder()
@@ -52,7 +52,7 @@ public class MiniMaxInvoker implements AIModelInvoker {
                 throw new IOException("Unexpected code " + response);
             }
 
-            return gson.fromJson(response.body().string(), ChatCompletionResponse.class);
+            return GSON.fromJson(response.body().string(), ChatCompletionResponse.class);
         }
     }
 

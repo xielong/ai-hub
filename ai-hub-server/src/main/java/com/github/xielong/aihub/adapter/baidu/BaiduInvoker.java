@@ -31,7 +31,7 @@ public class BaiduInvoker extends OpenAIInvoker {
     private static final String SECURITY_CREDENTIAL_KEY_SECRET_KEY = "secretKey";
     private static final String PROVIDER_DOMAIN = "https://aip.baidubce.com/rpc/2.0/ai_custom";
 
-    private final Gson gson = new Gson();
+    private static final Gson GSON = new Gson();
     @Autowired
     private CredentialMapper apiCredentialMapper;
     @Autowired
@@ -74,7 +74,7 @@ public class BaiduInvoker extends OpenAIInvoker {
                 .stream(true)
                 .build();
 
-        return gson.toJson(chatCompletionRequest);
+        return GSON.toJson(chatCompletionRequest);
     }
 
     private String getAccessToken() {

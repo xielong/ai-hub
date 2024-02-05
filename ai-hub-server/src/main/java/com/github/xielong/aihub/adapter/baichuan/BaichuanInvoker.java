@@ -15,7 +15,7 @@ import java.util.List;
 public class BaichuanInvoker extends OpenAIInvoker {
 
     private static final String PROVIDER_DOMAIN = "https://api.baichuan-ai.com";
-    private final Gson gson = new Gson();
+    private static final Gson GSON = new Gson();
     @Autowired
     private CredentialMapper apiCredentialMapper;
 
@@ -30,6 +30,7 @@ public class BaichuanInvoker extends OpenAIInvoker {
                 .findByProviderAndKey(AIProvider.BAICHUAN.getId(), SECURITY_CREDENTIAL_KEY_TOKEN);
     }
 
+    @Override
     protected String createRequestBody(String model, String input) {
         ChatCompletionRequest.Message systemMessage = ChatCompletionRequest.Message.builder()
                 .role("system")
@@ -48,6 +49,6 @@ public class BaichuanInvoker extends OpenAIInvoker {
                 .stream(true)
                 .build();
 
-        return gson.toJson(chatCompletionRequest);
+        return GSON.toJson(chatCompletionRequest);
     }
 }

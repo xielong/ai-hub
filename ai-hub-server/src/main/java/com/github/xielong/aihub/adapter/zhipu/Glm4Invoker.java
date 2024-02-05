@@ -23,7 +23,7 @@ import java.util.Optional;
 public class Glm4Invoker {
 
     private static final String PROVIDER_DOMAIN = "https://open.bigmodel.cn";
-    private final Gson gson = new Gson();
+    private static final Gson GSON = new Gson();
     @Autowired
     private HttpClientWithRetry httpClientWithRetry;
 
@@ -63,7 +63,7 @@ public class Glm4Invoker {
                 .stream(true)
                 .build();
 
-        return gson.toJson(chatCompletionRequest);
+        return GSON.toJson(chatCompletionRequest);
     }
 
     private String processAndExtractContent(String responseBody) throws IOException {
@@ -92,7 +92,7 @@ public class Glm4Invoker {
 
     protected String extractContentFromLine0(String line) {
         ChatCompletionResponse chatCompletionResponse =
-                gson.fromJson(line.substring("data: ".length()), ChatCompletionResponse.class);
+                GSON.fromJson(line.substring("data: ".length()), ChatCompletionResponse.class);
         return chatCompletionResponse.getChoices().get(0).getDelta().getContent();
     }
 }

@@ -16,8 +16,7 @@ public class MoonshotInvoker extends OpenAIInvoker {
 
     private static final String PROVIDER_DOMAIN = "https://api.moonshot.cn";
     private static final String SECURITY_CREDENTIAL_API_KEY = "apiKey";
-
-    private final Gson gson = new Gson();
+    private static final Gson GSON = new Gson();
     @Autowired
     private CredentialMapper apiCredentialMapper;
 
@@ -51,6 +50,6 @@ public class MoonshotInvoker extends OpenAIInvoker {
                 .stream(true)
                 .build();
 
-        return gson.toJson(chatCompletionRequest);
+        return GSON.toJson(chatCompletionRequest);
     }
 }

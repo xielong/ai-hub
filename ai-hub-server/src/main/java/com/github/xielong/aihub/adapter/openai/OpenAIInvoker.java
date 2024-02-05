@@ -27,7 +27,7 @@ public class OpenAIInvoker implements AIModelInvoker {
 
     protected static final String SECURITY_CREDENTIAL_KEY_TOKEN = "token";
     private static final String PROVIDER_DOMAIN = "https://api.openai.com";
-    private final Gson gson = new Gson();
+    private static final Gson GSON = new Gson();
     @Autowired
     private CredentialMapper apiCredentialMapper;
 
@@ -81,7 +81,7 @@ public class OpenAIInvoker implements AIModelInvoker {
                 .stream(true)
                 .build();
 
-        return gson.toJson(chatCompletionRequest);
+        return GSON.toJson(chatCompletionRequest);
     }
 
     private String processAndExtractContent(String responseBody) throws IOException {
@@ -110,7 +110,7 @@ public class OpenAIInvoker implements AIModelInvoker {
 
     protected String extractContentFromLine0(String line) {
         ChatCompletionResponse chatCompletionResponse =
-                gson.fromJson(line.substring("data: ".length()), ChatCompletionResponse.class);
+                GSON.fromJson(line.substring("data: ".length()), ChatCompletionResponse.class);
         return chatCompletionResponse.getChoices().get(0).getDelta().getContent();
     }
 
