@@ -32,6 +32,7 @@ public class MoonshotInvoker extends OpenAIInvoker {
                 .findByProviderAndKey(AIProvider.MOONSHOT.getId(), SECURITY_CREDENTIAL_API_KEY);
     }
 
+    @Override
     protected String createRequestBody(String model, String input) {
         ChatCompletionRequest.Message systemMessage = ChatCompletionRequest.Message.builder()
                 .role("system")
