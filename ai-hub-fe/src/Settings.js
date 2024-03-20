@@ -20,6 +20,7 @@ function Settings() {
         {provider: 'Xunfei', credentials: ['appId', 'apiKey', 'apiSecret']},
         {provider: 'Moonshot', credentials: ['apiKey']},
         {provider: 'ByteDance', credentials: ['accessKey', 'secretKey']},
+        {provider: 'Lingyi', credentials: ['apiKey']},
     ];
 
     const selectedModels = {/* ... */};

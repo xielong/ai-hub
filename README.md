@@ -22,6 +22,8 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 15. Moonshot / moonshot-v1-8k (月之暗面)
 16. Xunfei / Spark3.5 (讯飞星火3.5)
 17. ByteDance / Skylark-chat (字节豆包)
+18. Lingyi / yi-34b-chat-0205 (零一万物)
+19. Lingyi / yi-34b-chat-200k (零一万物)
 
 
 ![chat-demo](assets/chat-demo.png)
@@ -151,3 +153,5 @@ java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
 | Xunfei  | Spark3.5             | 0.03元/千tokens           | 企业赠500万token的免费调用额度，有效期12个月   |
 | Xunfei  | Spark3.1             | 0.03元/千tokens           | 企业赠500万token的免费调用额度，有效期12个月   |
 | Moonshot  | moonshot-v1-8k             | 0.012元/千tokens           | 新账户赠送15元   |
+| Lingyi  | yi-34b-chat-0205             | 0.0025元/千tokens           | 新账户赠送60元   |
+| Lingyi  | yi-34b-chat-200k             | 0.012元/千tokens           | 新账户赠送60元   |

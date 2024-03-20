@@ -15,7 +15,8 @@ public enum AIProvider {
     MINIMAX(7, "MiniMax"),
     XUNFEI(8, "Xunfei"),
     MOONSHOT(9, "Moonshot"),
-    BYTEDANCE(10, "ByteDance");
+    BYTEDANCE(10, "ByteDance"),
+    LINGYI(11, "Lingyi");
 
     private final int id;
     private final String name;

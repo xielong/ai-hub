@@ -21,6 +21,8 @@ function Chat() {
         'Ali/qwen-plus': true,
         'Moonshot/moonshot-v1-8k': true,
         'ByteDance/Skylark-chat': true,
+        'Lingyi/yi-34b-chat-0205': true,
+        'Lingyi/yi-34b-chat-200k': true,
 
         'Baidu/ERNIE-Bot-4': false,
         'Zhipu/glm-4': false,
