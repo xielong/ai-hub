@@ -24,7 +24,7 @@ public enum AIModel {
     XUNFEI_SPARK3_5(16, "Spark3.5", "讯飞星火3.5", AIProvider.XUNFEI.getName(), 1),
     BYTEDANCE_SKYLARK_CHAT(17, "Skylark-chat", "字节豆包", AIProvider.BYTEDANCE.getName(), 1),
     LINGYI_YI_34B_CHAT(18, "yi-34b-chat-0205", "零一万物34b", AIProvider.LINGYI.getName(), 1),
-    LINGYI_YI_34B_CHAT_200k(18, "yi-34b-chat-200k", "零一万物200k", AIProvider.LINGYI.getName(), 1);
+    LINGYI_YI_34B_CHAT_200k(19, "yi-34b-chat-200k", "零一万物200k", AIProvider.LINGYI.getName(), 1);
 
     private final int id;
     private final String name;
