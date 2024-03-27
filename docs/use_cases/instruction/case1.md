@@ -37,6 +37,8 @@
 
 ### Ali/qwen-plus (7)
 
+### Lingyi/yi-34b-chat-0205 (7)
+
 ### Baidu/ERNIE-Bot-turbo  (6.6)
 
 ### Zhipu/chatGLM_turbo  (6)
@@ -44,6 +46,8 @@
 ### Xunfei/Spark3.5  (6)
 
 ### Xunfei/Spark3.1  (6)
+
+### Lingyi/yi-vl-plus (6)
 
 
 ### Summary

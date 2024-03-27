@@ -56,11 +56,17 @@ public class Credential {
 ### Minimax/abab5.5-chat(7)
 完整实现了需求。
 
+### Lingyi/yi-34b-chat-0205(7)
+完整实现了需求。
+
 ### Tencent/ChatPro（6）
 无视了@Data，自己写了set和get函数。
 
 ### Tencent/ChatStd（6）
 无视了@Data，自己写了set和get函数。
+
+## Lingyi/yi-vl-plus (6)
+私自换了updatedAt的数据类。
 
 ### OpenAI/gpt-3.5-turbo（5）
 无视了@Data，并且生成了包含所有参数的构造函数，但又少了无参构造函数。

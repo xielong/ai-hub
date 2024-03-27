@@ -1,0 +1,59 @@
+## 需求
+
+给这段话划分语块，语块比固定搭配粒度略粗一些，语块之间要用/分隔，注意一句话应该有多个语块：
+
+To start, let's say you have a single server which is accepting and fulfilling requests for your application. But now, we're getting more users, so we need to scale it. The easiest thing to do would be to add more resources, like RAM, or maybe upgrade your CPU. This is known as vertical scaling. It's pretty easy, but it's very limited. A better approach would be to add replicas so that each server can handle a subset of requests. This is known as horizontal scaling. It's more powerful because we can almost scale infinitely, and we don't even need good machines. It also adds redundancy and fault tolerance because if one of our servers goes down, all of the other servers can continue to fulfill requests. This eliminates our previous single point of failure. But the downside is that this approach is much more complicated.
+
+## 结果
+
+### Moonshot/moonshot-v1-8k (8.5)
+To start/ let's say you have a single server/ which is accepting and fulfilling requests/ for your application/ But now/ we're getting more users/ so we need to scale it/ The easiest thing to do/ would be to add more resources/ like RAM/ or maybe upgrade your CPU/ This is known as vertical scaling/ It's pretty easy/ but it's very limited/ A better approach/ would be to add replicas/ so that each server can handle a subset of requests/ This is known as horizontal scaling/ It's more powerful/ because we can almost scale infinitely/ and we don't even need good machines/ It also adds redundancy and fault tolerance/ because if one of our servers goes down/ all of the other servers can continue to fulfill requests/ This eliminates our previous single point of failure/ But the downside/ is that this approach is much more complicated.
+
+### Ali/qwen-plus (7)
+To start, / let's say you have a single server / which is accepting and fulfilling requests / for your application. / But now, / we're getting more users, / so we need to scale it. / The easiest thing to do would be / to add more resources, / like RAM, / or maybe upgrade your CPU. / This is known as vertical scaling. / It's pretty easy, / but it's very limited. / A better approach would be / to add replicas / so that each server can handle a subset of requests. / This is known as horizontal scaling. / It's more powerful / because we can almost scale infinitely, / and we don't even need good machines. / It also adds redundancy / and fault tolerance / because if one of our servers goes down, / all of the other servers can continue to fulfill requests. / This eliminates our previous single point of failure. / But the downside is / that this approach is much more complicated.
+
+### Baichuan/Baichuan2-Turbo (6)
+To start, let's say / you have a single server / which is accepting and fulfilling requests / for your application. But now, we're getting more users, so we need to scale it. The easiest thing to do / would be to add more resources, like RAM, or maybe upgrade your CPU. This / is known as vertical scaling. It's pretty easy, but it's very limited. A better approach / would be to add replicas / so that each server can handle a subset of requests. This / is known as horizontal scaling. It's more powerful / because we can almost scale infinitely, and we don't even need good machines. It also adds redundancy and fault tolerance / because if one of our servers goes down, all of the other servers can continue to fulfill requests. This eliminates our previous single point of failure. But the downside / is that this approach / is much more complicated.
+
+### Tencent/ChatStd (6)
+To start/ let's say/ you have a single server/ which is accepting and fulfilling requests for your application. /But now/ we're getting more users/ so we need to scale it. / The easiest thing to do/ would be to add more resources /like RAM/ or maybe upgrade your CPU. /This is known as vertical scaling/ . /It's pretty easy/ /but it's very limited. /A better approach/ would be to add replicas/ so that each server can handle a subset of requests. /This is known as horizontal scaling/ . /It's more powerful/ because we can almost scale infinitely /and we don't even need good machines. It also adds redundancy and fault tolerance/ because if one of our servers goes down /all of the other servers can continue to fulfill requests. /This eliminates our previous single point of failure. /But the downside/ is that this approach is much more complicated.
+
+### Zhipu/chatGLM_turbo (5)
+To start, let's say/ you have a single server/ which is accepting and fulfilling requests/ for your application./ But now, we're getting more users/, so we need to scale it./ The easiest thing to do would be/ to add more resources/, like RAM/, or maybe upgrade your CPU./ This is known as vertical scaling./ It's pretty easy/, but it's very limited./ A better approach would be/ to add replicas/ so that each server can handle a subset of requests./ This is known as horizontal scaling./ It's more powerful/ because we can almost scale infinitely/, and we don't even need good machines./ It also adds redundancy and fault tolerance/ because if one of our servers goes down/, all of the other servers can continue to fulfill requests./ This eliminates our previous single point of failure./ But the downside is that this approach is much more complicated.
+
+### ByteDance/Skylark-chat (5)
+To start,/ let's say you have a single server/ which is accepting and fulfulling requests/ for your application./ But now,/ we're getting more users,/ so we need to scale it./ The easiest thing to do/ would be to add more resources,/ like RAM,/ or maybe upgrade your CPU./ This is known as vertical scaling./ It's pretty easy,/ but it's very limited./ A better approach would be to add replicas/ so that each server can handle a subset of requests./ This is known as horizontal scaling./ It's more powerful/ because we can almost scale infinitely,/ and we don't even need good machines./ It also adds redundancy/ and fault tolerance/ because if one of our servers goes down,/ all of the other servers can continue to fulfill requests./ This eliminates our previous single point of failure./ But the downside is that this approach is much more complicated.
+
+### OpenAI/gpt-3.5-turbo (4)
+To start/ let's say you have a single server which is accepting and fulfilling requests for your application. But now/ we're getting more users/ so we need to scale it. The easiest thing to do would be to add more resources/ like RAM/ or maybe upgrade your CPU. This is known as vertical scaling. It's pretty easy/ but it's very limited. A better approach would be to add replicas so that each server can handle a subset of requests. This is known as horizontal scaling. It's more powerful because we can almost scale infinitely/ and we don't even need good machines. It also adds redundancy and fault tolerance because if one of our servers goes down/ all of the other servers can continue to fulfill requests. This eliminates our previous single point of failure. But the downside is that this approach is much more complicated.
+
+### Ali/qwen-turbo (4)
+To start/let's say you have a single server/which is accepting and fulfilling requests for your application. But now/we're getting more users, so we need to scale it. The easiest thing to do/would be to add more resources, like RAM, or maybe upgrade your CPU./This is known as vertical scaling./It's pretty easy,/but it's very limited. A better approach/would be to add replicas/so that each server can handle a subset of requests./This is known as horizontal scaling./It's more powerful/because we can almost scale infinitely,/and we don't even need good machines. It also adds redundancy and fault tolerance/because if one of our servers goes down,/all of the other servers can continue to fulfill requests./This eliminates our previous single point of failure. But the downside/is that this approach is much more complicated.
+
+### Minimax/abab5.5-chat (4)
+To start, let's say you have a single server which is accepting and fulfilling requests for your application./ But now, we're getting more users, so we need to scale it./ The easiest thing to do would be to add more resources, like RAM, or maybe upgrade your CPU./ This is known as vertical scaling./ It's pretty easy, but it's very limited./ A better approach would be to add replicas so that each server can handle a subset of requests./ This is known as horizontal scaling./ It's more powerful because we can almost scale infinitely, and we don't even need good machines./ It also adds redundancy and fault tolerance because if one of our servers goes down, all of the other servers can continue to fulfill requests./ This eliminates our previous single point of failure./ But the downside is that this approach is much more complicated.
+
+### Xunfei/Spark3.1 (2)
+To start, let's say you have a single server which is accepting and fulfilling requests for your application. But now, we're getting more users, so we need to scale it. The easiest thing to do would be to add more resources, like RAM, or maybe upgrade your CPU. This is known as vertical scaling. It's pretty easy, but it's very limited. A better approach would be to add replicas so that each server can handle a subset of requests. This is known as horizontal scaling. It's more powerful because we can almost scale infinitely, and we don't even need good machines. It also adds redundancy and fault tolerance because if one of our servers goes down, all of the other servers can continue to fulfill requests. This eliminates our previous single point of failure. But the downside is that this approach is much more complicated.
+
+### Xunfei/Spark3.5 (1)
+To start/But now/So we need to scale it/ The easiest thing/This is known as vertical scaling/It's pretty easy, but it's very limited/A better approach/This is known as horizontal scaling/It's more powerful because we can almost scale infinitely, and we don't even need good machines/It also adds redundancy and fault tolerance because if one of our servers goes down, all of the other servers can continue to fulfill requests/This eliminates our previous single point of failure/But the downside is that this approach is much more complicated.
+
+### Baidu/ERNIE-Bot-turbo (0)
+以下是对这段话的语块划分：
+
+To start,/分隔 Let's/分隔 say/分隔 you/分隔 have/分隔 a/分隔 single/分隔 server/分隔 which/分隔 is/分隔 accepting/分隔 and/分隔 fulfilling/分隔 requests/分隔 for/分隔 your/分隔 application/分隔 ./分隔
+
+/ But/分隔 now/分隔 ,/分隔 we're/分隔 getting/分隔 more/分隔 users/分隔 ,/分隔 so/分隔 we/分隔 need/分隔 to/分隔 scale/分隔 it/分隔 ./
+
+The/分隔 easiest/分隔 thing/分隔 to/分隔 do/分隔 would/分隔 be/分隔 to/分隔 add/分隔 more/分隔 resources/分隔 ,/分隔 like/分隔 RAM/ 、/
+
+or/ maybe/ upgrade/ your/ CPU/ .// This/ is/ known/ as/ vertical/ scaling/.// It's/ pretty/ easy/,// but/,// it's/ very/ limited/.// A/ better/ approach/,// would/,// be/,// to/,// add/ replicas/,// so/,// that/,// each/,// server/,// can/,// handle/,// a/,// subset/,// of/,// requests/.// This/,// is/,// known/,// as/,// horizontal/,// scaling/.// It's/,// more/,// powerful/,// because/,// we/,// can/,// almost/,// scale/,// infinitely/,// and/,// we/,// don't/,// even/,// need/,// good/,// machines/.// It/,// also/,// adds/,// redundancy/,// and/,// fault/,// tolerance/,// // because/,// if/,// one/,// of/,// our/,// servers/,// goes/,// down/,// ,/.// all/,// of/,// the/,// other/,// servers/,// can/,// continue/,// to/,// fulfill/,// requests/. // This/',// eliminates/',// our/',// previous/',// single/',// point/',// of/',// failure/.
+
+But/',// the/',// downside/', // is/', // that/', // this/', // approach/', // is/', // much/', // more/', // complicated/.
+
+请注意，每个语块之间用“/”进行了划分。每个语块都包含了一个或多个单词，这些单词通常在语法和语义上更紧密地联系在一起。这样的划分可以帮助我们更好地理解和使用这些语块。
+
+
+### Summary
+1. 注意：大型语言模型的响应基于概率性预测，因此并不保证每次都一致。只有通过广泛的测试用例和多次测试，才能更准确地评估模型的性能。

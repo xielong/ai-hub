@@ -53,10 +53,16 @@
 ### Minimax/abab5.5-chat (5)
 实现不完整。
 
+## Lingyi/yi-vl-plus (5)
+实现不完整。
+
 ### Ali/qwen-turbo（4）
 命令不完整，而且写了一堆奇怪的命令。
 
 ### Xunfei/Spark3.1（4）
+实现不完整，而且有错误。
+
+## Lingyi/yi-vl-plus (4)
 实现不完整，而且有错误。
 
 ### Summary
