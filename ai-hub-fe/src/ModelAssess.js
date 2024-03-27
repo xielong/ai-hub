@@ -22,9 +22,15 @@ const ModelAssess = () => {
                 .then(data => {
                     const labels = data.map(item => item.modelAlias);
                     const ratings = data.map(item => item.rating / 10);
-                    const backgroundColors = data.map(item =>
-                        item.modelVersion >= 10 ? 'rgba(255, 99, 132, 0.5)' : 'rgba(54, 162, 235, 0.5)'
-                    );
+                    const backgroundColors = data.map(item => {
+                        if (item.modelVersion >= 100) {
+                            return 'rgba(255, 99, 132, 0.5)';  // 红色
+                        } else if (item.modelVersion >= 10) {
+                            return 'rgba(54, 162, 235, 0.5)';  // 蓝色
+                        } else {
+                            return 'rgba(75, 192, 192, 0.5)';  // 绿色
+                        }
+                    });
 
                     return new Chart(chartRef.current, {
                         type: 'bar',
@@ -73,15 +79,15 @@ const ModelAssess = () => {
             <div className="charts-container">
                 <div>
                     <canvas ref={translationChartRef}/>
-                    <p>备注：红色模型的均价是蓝色模型的 10 倍，选择模型时需要考虑到价格因素</p>
+                    <p>备注：红色模型的均价是蓝色模型的 10 倍，绿色模型最便宜，选择模型时需要考虑到价格因素</p>
                 </div>
                 <div>
                     <canvas ref={codingChartRef}/>
-                    <p>备注：红色模型的均价是蓝色模型的 10 倍，选择模型时需要考虑到价格因素</p>
+                    <p>备注：红色模型的均价是蓝色模型的 10 倍，绿色模型最便宜，选择模型时需要考虑到价格因素</p>
                 </div>
                 <div>
                     <canvas ref={instructionChartRef}/>
-                    <p>备注：红色模型的均价是蓝色模型的 10 倍，选择模型时需要考虑到价格因素</p>
+                    <p>备注：红色模型的均价是蓝色模型的 10 倍，绿色模型最便宜，选择模型时需要考虑到价格因素</p>
                 </div>
             </div>
         </div>
