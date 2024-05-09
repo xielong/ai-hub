@@ -24,6 +24,7 @@ function Chat() {
         'Lingyi/yi-34b-chat-0205': true,
         'Lingyi/yi-34b-chat-200k': true,
         'Lingyi/yi-vl-plus': true,
+        'Deepseek/deepseek-chat': true,
 
         'Baidu/ERNIE-Bot-4': false,
         'Zhipu/glm-4': false,

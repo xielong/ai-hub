@@ -21,6 +21,7 @@ function Settings() {
         {provider: 'Moonshot', credentials: ['apiKey']},
         {provider: 'ByteDance', credentials: ['accessKey', 'secretKey']},
         {provider: 'Lingyi', credentials: ['apiKey']},
+        {provider: 'DeepSeek', credentials: ['apiKey']},
     ];
 
     const selectedModels = {/* ... */};

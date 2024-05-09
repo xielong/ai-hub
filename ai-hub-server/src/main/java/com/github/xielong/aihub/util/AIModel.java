@@ -25,7 +25,8 @@ public enum AIModel {
     BYTEDANCE_SKYLARK_CHAT(17, "Skylark-chat", "字节豆包", AIProvider.BYTEDANCE.getName(), 10),
     LINGYI_YI_34B_CHAT(18, "yi-34b-chat-0205", "零一万物34b", AIProvider.LINGYI.getName(), 2),
     LINGYI_YI_34B_CHAT_200k(19, "yi-34b-chat-200k", "零一万物200k", AIProvider.LINGYI.getName(), 12),
-    LINGYI_YI_VL_PLUS(20, "yi-vl-plus", "零一万物plus", AIProvider.LINGYI.getName(), 6);
+    LINGYI_YI_VL_PLUS(20, "yi-vl-plus", "零一万物plus", AIProvider.LINGYI.getName(), 6),
+    DEEPSEEK_V2(21, "deepseek-chat", "DeepSeek-V2", AIProvider.LINGYI.getName(), 1);
 
     private final int id;
     private final String name;

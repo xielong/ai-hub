@@ -25,6 +25,7 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 18. Lingyi / yi-34b-chat-0205 (零一万物)
 19. Lingyi / yi-34b-chat-200k (零一万物)
 20. Lingyi / yi-vl-plus (零一万物)
+21. Deepseek / DeepSeek-V2 (Deepseek)
 
 
 ![chat-demo](assets/chat-demo.png)
@@ -157,3 +158,4 @@ java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
 | Lingyi  | yi-34b-chat-0205             | 0.0025元/千tokens           | 新账户赠送60元   |
 | Lingyi  | yi-vl-plus            | 0.006元/千tokens           | 新账户赠送60元   |
 | Lingyi  | yi-34b-chat-200k             | 0.012元/千tokens           | 新账户赠送60元   |
+| DeepSeek  | DeepSeek-V2            | 0.001元/1k tokens(input)&nbsp;&nbsp;0.002元/1k tokens (output)           | 新账户赠送10元   |
