@@ -27,6 +27,8 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 20. Lingyi / yi-vl-plus (零一万物)
 21. Deepseek / DeepSeek-V2 (Deepseek)
 
+在 [大模型列表](#大模型列表) 部分，有更完整的大语言模型列表。请注意，其中的一些大语言模型尚未经过评估，我将陆续对这些模型进行评估。
+
 
 ![chat-demo](assets/chat-demo.png)
 
@@ -134,28 +136,59 @@ java -jar ai-hub-server-1.0.0-SNAPSHOT-exec.jar
 ### [编程](docs/use_cases/coding/)
 ### z-bench 测试集
 
-## 价格
+## 大模型列表
 
-| Company | Model                   | Price                    | Notes                                           |
-|---------|-------------------------|--------------------------|-------------------------------------------------|
-| MiniMax | abab6                   | 0.2元/千tokens        |                                   |
-| MiniMax | abab5.5                 | 0.015元/千tokens      |                                   |
-| Zhipu   | GLM-4                   | 0.1元/千tokens           |                                   |
-| Zhipu   | GLM-3-Turbo             | 0.005元/千tokens         |                                   |
-| Ali     | qwen-plus              | 0.02元/千tokens     |
-| Ali     | qwen-turbo              | 0.008元/千tokens     |  
-| Baichuan| Baichuan2-Turbo         | 0.008元/千tokens         |                                   |
-| OpenAI  | gpt-4-0125-preview      | $0.01/1k tokens(input)&nbsp;&nbsp;$0.03/1k tokens (output)    |                       |
-| OpenAI  | gpt-3.5-turbo-0125      | $0.0005/1k tokens (input)&nbsp;&nbsp;$0.0015/1k tokens (output)  |                    |
-| Baidu   | ERNIE-Bot-turbo         | 0.012元/千tokens         |                                                 |
-| Baidu   | ERNIE-Bot 4.0           | 0.12元/千tokens          |                                                 |
-| Tencent | ChatStd     | 0.01元/千tokens     | 赠10万token的免费调用额度，有效期12个月        |
-| Tencent | ChatPro     | 0.10元/千tokens    | 赠10万token的免费调用额度，有效期12个月        |
-| ByteDance | Skylark-chat     | 0.011元/千tokens    |         |
-| Xunfei  | Spark3.5             | 0.03元/千tokens           | 企业赠500万token的免费调用额度，有效期12个月   |
-| Xunfei  | Spark3.1             | 0.03元/千tokens           | 企业赠500万token的免费调用额度，有效期12个月   |
-| Moonshot  | moonshot-v1-8k             | 0.012元/千tokens           | 新账户赠送15元   |
-| Lingyi  | yi-34b-chat-0205             | 0.0025元/千tokens           | 新账户赠送60元   |
-| Lingyi  | yi-vl-plus            | 0.006元/千tokens           | 新账户赠送60元   |
-| Lingyi  | yi-34b-chat-200k             | 0.012元/千tokens           | 新账户赠送60元   |
-| DeepSeek  | DeepSeek-V2            | 0.001元/1k tokens(input)&nbsp;&nbsp;0.002元/1k tokens (output)           | 新账户赠送10元   |
+### 低成本模型
+
+| Company   | Model          | Price(1M tokens)    | Context Length |
+|-----------|----------------|---------------------|----------------|
+| Baidu     | ERNIE Speed    | 免费                | 8k             |
+| Baidu     | ERNIE Lite     | 免费                | 8k             |
+| Tencent   | hunyuan-lite   | 免费                | 256k           |
+| ByteDance | Doubao-lite    | Input: 0.3 \| Output: 0.6 | 32k     |
+| Zhipu     | GLM-3-Turbo    | 1                   | 128k           |
+| Lingyi    | yi-spark       | 1                   | 16k            |
+| Ali       | qwen-long      | Input: 0.5 \| Output: 2 | 10m      |
+| ByteDance | Doubao-pro     | Input: 0.8 \| Output: 2 | 32k     |
+| DeepSeek  | deepseek-chat  | Input: 1 \| Output: 2  | 32k     |
+| Lingyi    | yi-medium      | 2.5                 | 16k            |
+
+### 中低成本模型
+
+| Company   | Model          | Price(1M tokens)    | Context Length |
+|-----------|----------------|---------------------|----------------|
+| Ali       | qwen-turbo     | Input: 2 \| Output: 6  | 8k          |
+| Tencent   | hunyuan-standard | Input: 4.5 \| Output: 5 | 32k    |
+| MiniMax   | abab5.5s       | 5                   | 8k             |
+| OpenAI    | GPT-3.5 Turbo  | Input: $0.50 \| Output: $1.50 | 16k |
+| ByteDance | Doubao-pro-128k | Input: 5 \| Output: 9 | 128k   |
+| Baichuan  | Baichuan2-Turbo | 8                  | 32k            |
+| MiniMax   | abab6.5s       | 10                  | 245k           |
+| Ali       | qwen-plus      | Input: 4 \| Output: 12 | 32k     |
+| Baidu     | ERNIE 3.0      | 12                  | 8k             |
+| Baichuan  | Baichuan3-Turbo | 12                 | 32k            |
+| Lingyi    | yi-large-turbo | 12                  | 16k            |
+| Lingyi    | yi-medium-200k | 12                  | 200k           |
+| Moonshot  | moonshot-v1-8k | 12                  | 8k             |
+
+### 中高成本模型
+
+| Company   | Model              | Price(1M tokens)    | Context Length |
+|-----------|--------------------|---------------------|----------------|
+| Moonshot  | moonshot-v1-32k    | 24                  | 32k            |
+| Baichuan  | Baichuan3-Turbo-128k | 24                | 128k           |
+| MiniMax   | abab6.5            | 30                  | 8k             |
+| Tencent   | hunyuan-standard-256k | Input: 15 \| Output: 60 | 256k |
+| Moonshot  | moonshot-v1-128k   | 60                  | 128k           |
+
+### 高成本模型
+
+| Company   | Model              | Price(1M tokens)    | Context Length |
+|-----------|--------------------|---------------------|----------------|
+| OpenAI    | GPT-4o             | Input: $5 \| Output: $15 | 128k     |
+| Baidu     | ERNIE-3.5-128k     | Input: 48 \| Output: 96 | 128k     |
+| Tencent   | hunyuan-pro        | Input: 30 \| Output: 100 | 32k     |
+| Ali       | qwen-max           | Input: 40 \| Output: 120 | 8k      |
+| Zhipu     | GLM-4              | 100                 | 128k           |
+| Baichuan  | Baichuan4          | 100                 | 32k            |
+| Baidu     | ERNIE 4.0          | 120                 | 8k             |
