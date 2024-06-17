@@ -12,6 +12,7 @@ function Chat() {
         'OpenAI/gpt-3.5-turbo-0125': true,
         'Baidu/ERNIE-Bot-turbo': true,
         'Ali/qwen-turbo': true,
+        'Tencent/hunyuan-lite': true,
         'Tencent/ChatStd': true,
         'Baichuan/Baichuan2-Turbo': true,
         'Zhipu/chatGLM_turbo': true,
