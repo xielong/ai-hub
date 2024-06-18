@@ -29,6 +29,7 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 22. Deepseek / DeepSeek-V2 (Deepseek)
 23. Baidu / ERNIE-Lite-8K（文心一言）
 24. Baidu / ERNIE-Speed-8K（文心一言）
+25. Xunfei / Spark-Lite（讯飞星火）
 
 在 [大模型列表](#大模型列表) 部分，有更完整的大语言模型列表。请注意，其中的一些大语言模型尚未经过评估，我将陆续对这些模型进行评估。
 

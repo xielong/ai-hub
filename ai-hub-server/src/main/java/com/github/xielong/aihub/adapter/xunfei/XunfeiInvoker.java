@@ -41,6 +41,8 @@ public class XunfeiInvoker implements AIModelInvoker {
         String version = "v3.1";
         if (model.equalsIgnoreCase(AIModel.XUNFEI_SPARK3_5.getName())) {
             version = "v3.5";
+        } else if (model.equalsIgnoreCase(AIModel.XUNFEI_SPARK_Lite.getName())) {
+            version = "v1.1";
         }
         return "https://spark-api.xf-yun.com/" + version + "/chat";
     }
