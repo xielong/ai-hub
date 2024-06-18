@@ -11,6 +11,8 @@ function Chat() {
     const [selectedModels, setSelectedModels] = useState({
         'OpenAI/gpt-3.5-turbo-0125': true,
         'Baidu/ERNIE-Bot-turbo': true,
+        'Baidu/ERNIE-Lite-8K': true,
+        'Baidu/ERNIE-Speed-8K': true,
         'Ali/qwen-turbo': true,
         'Tencent/hunyuan-lite': true,
         'Tencent/ChatStd': true,

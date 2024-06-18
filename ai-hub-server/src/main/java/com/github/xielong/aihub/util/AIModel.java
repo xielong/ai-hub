@@ -27,7 +27,9 @@ public enum AIModel {
     LINGYI_YI_34B_CHAT_200k(19, "yi-34b-chat-200k", "零一万物200k", AIProvider.LINGYI.getName(), 12),
     LINGYI_YI_VL_PLUS(20, "yi-vl-plus", "零一万物plus", AIProvider.LINGYI.getName(), 6),
     DEEPSEEK_V2(21, "deepseek-chat", "DeepSeek-V2", AIProvider.LINGYI.getName(), 1),
-    HUNYUAN_LITE(22, "hunyuan-lite", "Hunyuan lite", AIProvider.TENCENT.getName(), 1);
+    HUNYUAN_LITE(22, "hunyuan-lite", "Hunyuan lite", AIProvider.TENCENT.getName(), 1),
+    ERNIE_LITE_8K(23, "ERNIE-Lite-8K", "文心一言ERNIE Lite 8K", AIProvider.BAIDU.getName(), 1),
+    ERNIE_SPEED_8K(24, "ERNIE-Speed-8K", "文心一言ERNIE Speed 8K", AIProvider.BAIDU.getName(), 1);
 
     private final int id;
     private final String name;

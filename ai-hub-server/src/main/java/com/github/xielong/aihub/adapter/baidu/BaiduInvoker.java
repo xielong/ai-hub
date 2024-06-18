@@ -27,6 +27,8 @@ public class BaiduInvoker extends OpenAIInvoker {
 
     private static final String MODEL_ERNIE_BOT_4 = "ERNIE-Bot-4";
     private static final String MODEL_ERNIE_BOT_TURBO = "ERNIE-Bot-turbo";
+    private static final String MODEL_ERNIE_LITE_8K = "ERNIE-Lite-8K";
+    private static final String MODEL_ERNIE_SPEED_8K = "ERNIE-SPEED-8K";
     private static final String SECURITY_CREDENTIAL_KEY_API_KEY = "apiKey";
     private static final String SECURITY_CREDENTIAL_KEY_SECRET_KEY = "secretKey";
     private static final String PROVIDER_DOMAIN = "https://aip.baidubce.com/rpc/2.0/ai_custom";
@@ -48,6 +50,10 @@ public class BaiduInvoker extends OpenAIInvoker {
             path = "/v1/wenxinworkshop/chat/completions_pro";
         } else if (MODEL_ERNIE_BOT_TURBO.equalsIgnoreCase(model)) {
             path = "/v1/wenxinworkshop/chat/eb-instant";
+        } else if (MODEL_ERNIE_LITE_8K.equalsIgnoreCase(model)) {
+            path = "/v1/wenxinworkshop/chat/ernie-lite-8k";
+        } else if (MODEL_ERNIE_SPEED_8K.equalsIgnoreCase(model)) {
+            path = "/v1/wenxinworkshop/chat/ernie_speed";
         }
 
         return HttpRequest.newBuilder()

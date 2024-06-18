@@ -13,9 +13,9 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 6. Zhipu / chatGLM_turbo（智谱chatGLM）
 7. Ali / qwen-plus（通义千问plus）
 8. Ali / qwen-turbo（通义千问）
-9. Tencent / ChatPro（腾讯混元高级版）
-10. Tencent / ChatStd（腾讯混元标准版）
-11. Tencent / hunyuan-lite
+9. Tencent / ChatPro（腾讯混元）
+10. Tencent / ChatStd（腾讯混元）
+11. Tencent / hunyuan-lite（腾讯混元)
 12. Baichuan / Baichuan2-Turbo（百川）
 13. Minimax / abab5.5-chat（MiniMax）
 14. Minimax / abab6-chat（MiniMax）
@@ -27,6 +27,8 @@ AI Hub旨在持续测试和评估主流大型语言模型，同时积累和管�
 20. Lingyi / yi-34b-chat-200k (零一万物)
 21. Lingyi / yi-vl-plus (零一万物)
 22. Deepseek / DeepSeek-V2 (Deepseek)
+23. Baidu / ERNIE-Lite-8K（文心一言）
+24. Baidu / ERNIE-Speed-8K（文心一言）
 
 在 [大模型列表](#大模型列表) 部分，有更完整的大语言模型列表。请注意，其中的一些大语言模型尚未经过评估，我将陆续对这些模型进行评估。
 
